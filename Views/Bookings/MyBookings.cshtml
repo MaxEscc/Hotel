@@ -1,0 +1,35 @@
+<thead>
+    <tr>
+        <th>Habitación</th>
+        <th>Fecha de Entrada</th>
+        <th>Fecha de Salida</th>
+        <th>Número de Huéspedes</th>
+        <th>Reservado por</th> <!-- Nueva columna -->
+        <th>Acciones</th>
+    </tr>
+</thead>
+<tbody>
+    @foreach (var booking in Model)
+    {
+        <tr>
+            <td>@booking.Room?.RoomType</td>
+            <td>@booking.CheckInDate.ToShortDateString()</td>
+            <td>@booking.CheckOutDate.ToShortDateString()</td>
+            <td>@booking.NumberOfGuests</td>
+            <td>
+                @if (booking.User != null)
+                {
+                    <span>@booking.User.UserName</span> <!-- Nombre del usuario si es un usuario registrado -->
+                }
+                else
+                {
+                    <span>Reservado como invitado</span> <!-- Para reservas anónimas -->
+                }
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@booking.BookingId" class="btn btn-info">Detalles</a>
+                <a asp-action="Delete" asp-route-id="@booking.BookingId" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esta reserva?');">Eliminar</a>
+            </td>
+        </tr>
+    }
+</tbody>

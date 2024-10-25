@@ -1,0 +1,38 @@
+@model HotelReservation.Models.Booking
+
+@{
+    ViewData["Title"] = "Eliminar Reserva";
+}
+
+<h2>Eliminar Reserva</h2>
+
+<h3>¿Estás seguro que deseas eliminar esta reserva?</h3>
+<div>
+    <h4>Reserva</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Cliente</dt>
+        <dd class="col-sm-10">@Model.CustomerName</dd>
+
+        <dt class="col-sm-2">Correo</dt>
+        <dd class="col-sm-10">@Model.CustomerEmail</dd>
+
+        <dt class="col-sm-2">Teléfono</dt>
+        <dd class="col-sm-10">@Model.CustomerPhone</dd>
+
+        <dt class="col-sm-2">Habitación</dt>
+        <dd class="col-sm-10">@Model.Room?.RoomType</dd>
+
+        <dt class="col-sm-2">Fecha Check-in</dt>
+        <dd class="col-sm-10">@Model.CheckInDate.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Fecha Check-out</dt>
+        <dd class="col-sm-10">@Model.CheckOutDate.ToShortDateString()</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BookingId" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Cancelar</a>
+    </form>
+</div>

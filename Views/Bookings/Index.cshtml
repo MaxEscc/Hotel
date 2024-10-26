@@ -1,53 +1,39 @@
 @model IEnumerable<HotelReservation.Models.Booking>
 
-@{
-    ViewBag.Title = "Lista de Reservas";
-}
+<h1>Reservas</h1>
 
-<h2>Lista de Reservas</h2>
-
-<p>
-    <a href="@Url.Action("Create", "Bookings")" class="btn btn-primary">Agregar Nueva Reserva</a>
-</p>
+<!-- Botones de acción -->
+<div>
+    <a asp-action="Create" class="btn btn-primary">Crear Nueva Reserva</a>
+</div>
 
 <table class="table">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Nombre del Cliente</th>
-            <th>Correo Electrónico</th>
-            <th>Teléfono</th>
-            <th>Fecha de Entrada</th>
-            <th>Fecha de Salida</th>
-            <th>Número de Huéspedes</th>
-            <th>Acciones</th>
+            <th>Reserva ID</th>
+            <th>Cliente</th>
+            <th>Habitación</th>
+            <th>Fecha de Check-In</th>
+            <th>Fecha de Check-Out</th>
+            <th>Estado</th>
+            <th>Acciones</th> <!-- Columna para los botones de acción -->
         </tr>
     </thead>
     <tbody>
-        @if (Model != null && Model.Any())
-        {
-            foreach (var booking in Model)
-            {
-                <tr>
-                    <td>@booking.BookingId</td>
-                    <td>@booking.CustomerName</td>
-                    <td>@booking.CustomerEmail</td>
-                    <td>@booking.CustomerPhone</td>
-                    <td>@booking.CheckInDate.ToShortDateString()</td>
-                    <td>@booking.CheckOutDate.ToShortDateString()</td>
-                    <td>@booking.NumberOfGuests</td>
-                    <td>
-                        <a href="@Url.Action("Details", "Bookings", new { id = booking.BookingId })" class="btn btn-info">Detalles</a>
-                        <a href="@Url.Action("Edit", "Bookings", new { id = booking.BookingId })" class="btn btn-warning">Editar</a>
-                        <a href="@Url.Action("Delete", "Bookings", new { id = booking.BookingId })" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esta reserva?');">Eliminar</a>
-                    </td>
-                </tr>
-            }
-        }
-        else
+        @foreach (var booking in Model)
         {
             <tr>
-                <td colspan="8" class="text-center">No hay reservas disponibles.</td>
+                <td>@booking.BookingId</td>
+                <td>@booking.CustomerName</td>
+                <td>@booking.Room?.RoomType ?? "No asignada"</td>
+                <td>@booking.CheckInDate.ToShortDateString()</td>
+                <td>@booking.CheckOutDate.ToShortDateString()</td>
+                
+                <td>
+                    <!-- Botones para editar y eliminar -->
+                    <a asp-action="Edit" asp-route-id="@booking.BookingId" class="btn btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@booking.BookingId" class="btn btn-danger">Eliminar</a>
+                     <a asp-action="Details" asp-route-id="@booking.BookingId" class="btn btn-primary">Detalles</a> 
             </tr>
         }
     </tbody>

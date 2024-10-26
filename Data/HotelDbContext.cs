@@ -20,6 +20,12 @@ namespace HotelReservation.Data
                 .Property(r => r.Price)
                 .HasColumnType("decimal(18,2)");
 
+            // Configurar la relación entre Booking y ApplicationUser
+            modelBuilder.Entity<Booking>()
+                .HasOne<ApplicationUser>()  // Indica que Booking tiene una relación con ApplicationUser
+                .WithMany(u => u.Bookings)  // Indica que un ApplicationUser puede tener muchas reservas
+                .HasForeignKey(b => b.UserId);  // Establece la clave foránea
+
             base.OnModelCreating(modelBuilder);
         }
     }

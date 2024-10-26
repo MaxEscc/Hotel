@@ -1,35 +1,43 @@
-<thead>
-    <tr>
-        <th>Habitación</th>
-        <th>Fecha de Entrada</th>
-        <th>Fecha de Salida</th>
-        <th>Número de Huéspedes</th>
-        <th>Reservado por</th> <!-- Nueva columna -->
-        <th>Acciones</th>
-    </tr>
-</thead>
-<tbody>
-    @foreach (var booking in Model)
-    {
-        <tr>
-            <td>@booking.Room?.RoomType</td>
-            <td>@booking.CheckInDate.ToShortDateString()</td>
-            <td>@booking.CheckOutDate.ToShortDateString()</td>
-            <td>@booking.NumberOfGuests</td>
-            <td>
-                @if (booking.User != null)
-                {
-                    <span>@booking.User.UserName</span> <!-- Nombre del usuario si es un usuario registrado -->
-                }
-                else
-                {
-                    <span>Reservado como invitado</span> <!-- Para reservas anónimas -->
-                }
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@booking.BookingId" class="btn btn-info">Detalles</a>
-                <a asp-action="Delete" asp-route-id="@booking.BookingId" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar esta reserva?');">Eliminar</a>
-            </td>
-        </tr>
-    }
-</tbody>
+@model IEnumerable<HotelReservation.Models.Booking>
+
+<h2>Mis Reservas</h2>
+
+@if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Habitación</th>
+                <th>Fecha de Check-In</th>
+                <th>Fecha de Check-Out</th>
+                <th>Cliente</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Número de Huéspedes</th>
+         
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@(booking.Room?.RoomType ?? "Sin habitación asignada")</td>
+                    <td>@booking.CheckInDate.ToShortDateString()</td>
+                    <td>@booking.CheckOutDate.ToShortDateString()</td>
+                    <td>@booking.CustomerName</td>
+                    <td>@booking.CustomerEmail</td>
+                    <td>@booking.CustomerPhone</td>
+                    <td>@booking.NumberOfGuests</td>
+                    <td>@booking.SpecialRequests</td>
+                    <td>
+     
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

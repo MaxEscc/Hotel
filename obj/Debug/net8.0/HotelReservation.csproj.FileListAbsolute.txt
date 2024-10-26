@@ -261,3 +261,4 @@ C:\Users\Max_j\Desktop\Hotel\HotelReservation\obj\Debug\net8.0\refint\HotelReser
 C:\Users\Max_j\Desktop\Hotel\HotelReservation\obj\Debug\net8.0\HotelReservation.pdb
 C:\Users\Max_j\Desktop\Hotel\HotelReservation\obj\Debug\net8.0\HotelReservation.genruntimeconfig.cache
 C:\Users\Max_j\Desktop\Hotel\HotelReservation\obj\Debug\net8.0\ref\HotelReservation.dll
+c:\Users\Max_j\Desktop\Hotel\HotelReservation\obj\Debug\net8.0\HotelReservation.sourcelink.json

@@ -1,9 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace HotelReservation.Models
+namespace HotelReservation.Models  // Asegúrate de que esto coincide
 {
     public class RegisterViewModel
     {
+        [Required]
+        public required string FirstName { get; set; }
+
+        [Required]
+        public required string LastName { get; set; }
+
         [Required]
         [EmailAddress]
         public required string Email { get; set; }

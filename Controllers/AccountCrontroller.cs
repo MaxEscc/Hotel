@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using HotelReservation.Models; // Asegúrate de que este sea el espacio de nombres correcto para tu proyecto
+using HotelReservation.Models; 
 using System.Threading.Tasks;
 
 public class AccountController : Controller
 {
-    private readonly SignInManager<ApplicationUser> _signInManager; // Cambiar a ApplicationUser
-    private readonly UserManager<ApplicationUser> _userManager;     // Cambiar a ApplicationUser
+    // Cambio de Identity a ApplicationUser para el registro de usuarios
+    private readonly SignInManager<ApplicationUser> _signInManager; 
+    private readonly UserManager<ApplicationUser> _userManager;    
 
     public AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
     {
@@ -44,7 +45,13 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            var user = new ApplicationUser { UserName = model.Email, Email = model.Email }; // Cambiar a ApplicationUser
+            var user = new ApplicationUser 
+            { 
+                UserName = model.Email, 
+                Email = model.Email,
+                FirstName = model.FirstName, 
+                LastName = model.LastName    
+            }; 
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {

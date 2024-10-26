@@ -7,7 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using HotelReservation.Data;
 using HotelReservation.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Authorization; // Agregar este espacio de nombres
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims; 
 
 namespace HotelReservation.Controllers
 {
@@ -15,11 +17,14 @@ namespace HotelReservation.Controllers
     public class BookingsController : Controller
     {
         private readonly HotelDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public BookingsController(HotelDbContext context)
+        public BookingsController(HotelDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
-        }
+            _userManager = userManager;
+        }  
+
 
          [Authorize(Roles = "Admin")] // Solo los administradores pueden crear reservas
         // GET: Bookings
@@ -29,24 +34,26 @@ namespace HotelReservation.Controllers
             return View(bookings);
         }
 
-        // GET: Bookings/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
+             // GET: Bookings/Details/5
+             public async Task<IActionResult> Details(int? id)
+            {
             if (id == null)
             {
                 return NotFound();
             }
 
             var booking = await _context.Bookings
-                .Include(b => b.Room)
+                .Include(b => b.Room) // Incluye Room para evitar referencias nulas en la vista
                 .FirstOrDefaultAsync(m => m.BookingId == id);
+
             if (booking == null)
             {
-                return NotFound();
+                return NotFound("La reserva no fue encontrada."); // Manejo del caso de referencia nula
             }
 
             return View(booking);
         }
+
 
         // GET: Bookings/Create
         [Authorize(Roles = "Admin")] // Solo los administradores pueden crear reservas
@@ -86,64 +93,81 @@ namespace HotelReservation.Controllers
             return View(booking);
         }
 
-        // GET: Bookings/Edit/5
-        [Authorize(Roles = "Admin")] // Solo los administradores pueden editar reservas
-        public async Task<IActionResult> Edit(int? id)
+     // GET: Bookings/Edit/5
+[Authorize(Roles = "Admin")] // Solo los administradores pueden editar reservas
+public async Task<IActionResult> Edit(int? id)
+{
+    if (id == null)
+    {
+        return NotFound();
+    }
+
+    var booking = await _context.Bookings.FindAsync(id);
+    if (booking == null)
+    {
+        return NotFound();
+    }
+
+    ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", booking.RoomId);
+    return View(booking);
+}
+
+[HttpPost]
+[ValidateAntiForgeryToken]
+[Authorize(Roles = "Admin")] // Solo los administradores pueden editar reservas
+public async Task<IActionResult> Edit(int id, [Bind("BookingId,RoomId,CustomerName,CustomerEmail,CustomerPhone,CheckInDate,CheckOutDate,NumberOfGuests,SpecialRequests,UserId")] Booking booking)
+{
+    if (id != booking.BookingId)
+    {
+        return NotFound();
+    }
+
+    if (ModelState.IsValid)
+    {
+        // Verificar si la habitación ya está reservada en esas fechas
+        var roomReservations = await _context.Bookings
+            .Where(b => b.RoomId == booking.RoomId &&
+                        b.BookingId != booking.BookingId && // Excluir la reserva actual
+                        ((b.CheckInDate <= booking.CheckOutDate && b.CheckOutDate >= booking.CheckInDate)))
+            .ToListAsync();
+
+        if (roomReservations.Any())
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var booking = await _context.Bookings.FindAsync(id);
-            if (booking == null)
-            {
-                return NotFound();
-            }
-
+            ModelState.AddModelError("", "La habitación ya está reservada en esas fechas.");
             ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", booking.RoomId);
-            return View(booking);
+            return View(booking); // Retornar a la vista de edición con el error
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")] // Solo los administradores pueden editar reservas
-        public async Task<IActionResult> Edit(int id, [Bind("BookingId,RoomId,CustomerName,CustomerEmail,CustomerPhone,CheckInDate,CheckOutDate,NumberOfGuests,SpecialRequests")] Booking booking)
+        try
         {
-            if (id != booking.BookingId)
+            // No actualices el UserId si ya está asignado, para que no se sobrescriba
+            var existingBooking = await _context.Bookings.AsNoTracking().FirstOrDefaultAsync(b => b.BookingId == id);
+            if (existingBooking != null && existingBooking.UserId != null)
+            {
+                booking.UserId = existingBooking.UserId;
+            }
+
+            _context.Update(booking);
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!BookingExists(booking.BookingId))
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            else
             {
-                try
-                {
-                    _context.Update(booking);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BookingExists(booking.BookingId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                catch (Exception ex) // Captura cualquier excepción general
-                {
-                    Console.WriteLine($"Error al actualizar la reserva: {ex.Message}");
-                    ModelState.AddModelError(string.Empty, "Ocurrió un error inesperado al intentar actualizar la reserva.");
-                }
-                return RedirectToAction(nameof(Index));
+                throw;
             }
-
-            ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", booking.RoomId);
-            return View(booking);
         }
+        return RedirectToAction(nameof(Index));
+    }
+
+    ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", booking.RoomId);
+    return View(booking);
+}
+
 
         // GET: Bookings/Delete/5
         [Authorize(Roles = "Admin")] // Solo los administradores pueden eliminar reservas
@@ -194,82 +218,116 @@ namespace HotelReservation.Controllers
         }
 
         // GET: Bookings/Reserve/5
-        public IActionResult Reserve(int id)
+public IActionResult Reserve(int id)
+{
+    var room = _context.Rooms.Find(id);
+    if (room == null || !room.IsAvailable)
+    {
+        return NotFound("La habitación no está disponible.");
+    }
+
+    var booking = new Booking { RoomId = id };
+
+    var existingBookings = _context.Bookings
+        .Where(b => b.RoomId == id)
+        .Select(b => new { b.CheckInDate, b.CheckOutDate })
+        .ToList();
+
+    ViewBag.ExistingBookings = existingBookings;
+    ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", id);
+    return View(booking);
+}
+    // POST: Bookings/Reserve
+        [HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Reserve([Bind("RoomId,CustomerName,CustomerEmail,CustomerPhone,CheckInDate,CheckOutDate,NumberOfGuests,SpecialRequests")] Booking booking)
+{
+    // Validar disponibilidad de la habitación
+    bool isRoomAvailable = !_context.Bookings.Any(b =>
+        b.RoomId == booking.RoomId &&
+        ((b.CheckInDate <= booking.CheckInDate && b.CheckOutDate > booking.CheckInDate) || 
+         (b.CheckInDate < booking.CheckOutDate && b.CheckOutDate >= booking.CheckOutDate)));
+
+    if (!isRoomAvailable)
+    {
+        ModelState.AddModelError(string.Empty, "La habitación no está disponible en las fechas seleccionadas.");
+        ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", booking.RoomId);
+        return View(booking);
+    }
+
+    // Si el usuario está autenticado, asigna el UserId; de lo contrario, permite que sea nulo
+    if (User.Identity != null && User.Identity.IsAuthenticated)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user != null)
         {
-            var room = _context.Rooms.Find(id);
-            if (room == null || !room.IsAvailable)
-            {
-                return NotFound("La habitación no está disponible.");
-            }
-
-            var booking = new Booking { RoomId = id };
-
-            var existingBookings = _context.Bookings
-                .Where(b => b.RoomId == id)
-                .Select(b => new { b.CheckInDate, b.CheckOutDate })
-                .ToList();
-
-            ViewBag.ExistingBookings = existingBookings;
-            ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", id);
+            booking.UserId = user.Id; // Asocia la reserva con el Id del usuario autenticado
+        }
+        else
+        {
+            ModelState.AddModelError(string.Empty, "No se pudo encontrar el usuario.");
             return View(booking);
         }
+    }
+    else
+    {
+        booking.UserId = null; // Reservas sin usuario registrado
+    }
 
-        // POST: Bookings/Reserve
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Reserve([Bind("RoomId,CustomerName,CustomerEmail,CustomerPhone,CheckInDate,CheckOutDate,NumberOfGuests,SpecialRequests")] Booking booking)
-        {
-            var existingBookings = _context.Bookings
-                .Where(b => b.RoomId == booking.RoomId)
-                .Select(b => new { b.CheckInDate, b.CheckOutDate })
-                .ToList();
+    _context.Add(booking); // Guardar la reserva
+    await _context.SaveChangesAsync();
+    return RedirectToAction("ClientIndex");
+}   
 
-            if (!ModelState.IsValid)
-            {
-                ViewBag.ExistingBookings = existingBookings; 
-                var room = await _context.Rooms.FindAsync(booking.RoomId);
-                ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", booking.RoomId);
-                return View(booking);
-            }
+    //ver reservas de usurios
 
-            bool isRoomAvailable = !_context.Bookings.Any(b =>
-                b.RoomId == booking.RoomId &&
-                ((b.CheckInDate <= booking.CheckInDate && b.CheckOutDate > booking.CheckInDate) || 
-                 (b.CheckInDate < booking.CheckOutDate && b.CheckOutDate >= booking.CheckOutDate)));
+[HttpGet]
+[Authorize] // Solo usuarios autenticados pueden ver sus reservas
+public async Task<IActionResult> MyBookings()
+{
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // Obtiene el UserId del usuario autenticado
+    if (userId == null)
+    {
+        return RedirectToAction("Login", "Account"); // Redirigir a Login si no está autenticado
+    }
 
-            if (!isRoomAvailable)
-            {
-                ModelState.AddModelError(string.Empty, "La habitación no está disponible en las fechas seleccionadas.");
-                ViewBag.ExistingBookings = existingBookings;
-                ViewBag.Rooms = new SelectList(_context.Rooms.Where(r => r.IsAvailable), "RoomId", "RoomType", booking.RoomId);
-                return View(booking);
-            }
+    var bookings = await _context.Bookings
+        .Where(b => b.UserId == userId) // Filtra reservas por UserId
+        .Include(b => b.Room) // Incluye la información de la habitación
+        .ToListAsync();
 
-            _context.Add(booking);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("ClientIndex");
-        }
+    if (!bookings.Any())
+    {
+        ViewBag.Message = "No tienes reservas.";
+    }
 
-        // Método para obtener fechas disponibles
-        private List<DateTime> GetAvailableDates(int roomId)
-        {
-            var existingBookings = _context.Bookings
-                .Where(b => b.RoomId == roomId)
-                .Select(b => new { b.CheckInDate, b.CheckOutDate })
-                .ToList();
+    return View("MyBookings", bookings); // Muestra la vista con las reservas del usuario
+}
 
-            List<DateTime> availableDates = new List<DateTime>();
-            if (existingBookings.Any())
-            {
-                DateTime lastCheckOut = existingBookings.Max(b => b.CheckOutDate);
-                availableDates.Add(lastCheckOut.AddDays(1)); // Primer día disponible después de la última reserva
-            }
-            else
-            {
-                availableDates.Add(DateTime.Today);
-            }
 
-            return availableDates;
-        }
+    
+
+// Método para obtener fechas disponibles
+private List<DateTime> GetAvailableDates(int roomId)
+{
+    var existingBookings = _context.Bookings
+        .Where(b => b.RoomId == roomId)
+        .Select(b => new { b.CheckInDate, b.CheckOutDate })
+        .ToList();
+
+    List<DateTime> availableDates = new List<DateTime>();
+    if (existingBookings.Any())
+    {
+        DateTime lastCheckOut = existingBookings.Max(b => b.CheckOutDate);
+        availableDates.Add(lastCheckOut.AddDays(1)); // Primer día disponible después de la última reserva
+    }
+    else
+    {
+        availableDates.Add(DateTime.Today);
+    }
+
+    return availableDates;
+}
+
     }
 }

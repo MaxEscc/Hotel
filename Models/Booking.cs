@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace HotelReservation.Models
@@ -38,7 +37,11 @@ namespace HotelReservation.Models
         [StringLength(500)]
         public string? SpecialRequests { get; set; }
 
-        // Propiedad de navegación
+        // Propiedad para referenciar al usuario
+          public string? UserId { get; set; }
+
+        // Propiedades de navegación
         public virtual Room? Room { get; set; }
+        public virtual ApplicationUser? User { get; set; }
     }
 }

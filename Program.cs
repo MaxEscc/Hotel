@@ -11,7 +11,7 @@ builder.Services.AddDbContext<HotelDbContext>(options =>
     options.UseSqlServer(connectionString ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
 
 // Agrega servicios de Identity
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>() // Cambia a ApplicationUser aquí
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<HotelDbContext>()
     .AddDefaultTokenProviders();
 
@@ -31,8 +31,17 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>(); // Cambia a ApplicationUser aquí
-    await SeedData.Initialize(services, userManager); // Inicializa roles y usuarios
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    
+    try
+    {
+        await SeedData.Initialize(services, userManager); // Inicializa roles y usuarios
+    }
+    catch (Exception ex)
+    {
+        // Maneja el error según sea necesario, por ejemplo, registrándolo
+        Console.WriteLine($"Error inicializando datos: {ex.Message}");
+    }
 }
 
 // Configura el pipeline de solicitudes HTTP

@@ -48,6 +48,18 @@
         <textarea asp-for="SpecialRequests" class="form-control"></textarea>
         <span asp-validation-for="SpecialRequests" class="text-danger"></span>
     </div>
+
+    @if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
+
+
     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
     <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
 </form>

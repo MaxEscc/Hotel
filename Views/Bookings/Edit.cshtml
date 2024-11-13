@@ -1,0 +1,69 @@
+@model HotelReservation.Models.Booking
+
+@{
+    ViewData["Title"] = "Editar Reserva";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="BookingId" />
+    <div class="form-group">
+        <label asp-for="RoomId" class="control-label"></label>
+        <select asp-for="RoomId" class="form-control" asp-items="ViewBag.Rooms"></select>
+        <span asp-validation-for="RoomId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CustomerName" class="control-label"></label>
+        <input asp-for="CustomerName" class="form-control" />
+        <span asp-validation-for="CustomerName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CustomerEmail" class="control-label"></label>
+        <input asp-for="CustomerEmail" class="form-control" />
+        <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CustomerPhone" class="control-label"></label>
+        <input asp-for="CustomerPhone" class="form-control" />
+        <span asp-validation-for="CustomerPhone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CheckInDate" class="control-label"></label>
+        <input asp-for="CheckInDate" class="form-control" type="date" />
+        <span asp-validation-for="CheckInDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CheckOutDate" class="control-label"></label>
+        <input asp-for="CheckOutDate" class="form-control" type="date" />
+        <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumberOfGuests" class="control-label"></label>
+        <input asp-for="NumberOfGuests" class="form-control" type="number" />
+        <span asp-validation-for="NumberOfGuests" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SpecialRequests" class="control-label"></label>
+        <textarea asp-for="SpecialRequests" class="form-control"></textarea>
+        <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+    </div>
+
+    @if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
+
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

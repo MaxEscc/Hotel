@@ -1,0 +1,38 @@
+@model HotelReservation.Models.Booking
+
+<h2>Detalles de la Reserva</h2>
+
+<div>
+    <h4>Reserva</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Cliente</dt>
+        <dd class="col-sm-10">@Model.CustomerName</dd>
+
+        <dt class="col-sm-2">Correo</dt>
+        <dd class="col-sm-10">@Model.CustomerEmail</dd>
+
+        <dt class="col-sm-2">Teléfono</dt>
+        <dd class="col-sm-10">@Model.CustomerPhone</dd>
+
+        <dt class="col-sm-2">Habitación</dt>
+        <dd class="col-sm-10">@Model.Room?.RoomType</dd>
+
+        <dt class="col-sm-2">Fecha Check-in</dt>
+        <dd class="col-sm-10">@Model.CheckInDate.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Fecha Check-out</dt>
+        <dd class="col-sm-10">@Model.CheckOutDate.ToShortDateString()</dd>
+
+        <dt class="col-sm-2">Número de Huéspedes</dt>
+        <dd class="col-sm-10">@Model.NumberOfGuests</dd>
+
+        <dt class="col-sm-2">Solicitudes Especiales</dt>
+        <dd class="col-sm-10">@Model.SpecialRequests</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BookingId">Editar</a> |
+    <a asp-action="Index">Volver al listado</a>
+</div>

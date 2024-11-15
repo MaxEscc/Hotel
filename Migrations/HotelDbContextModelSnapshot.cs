@@ -122,6 +122,9 @@ namespace HotelReservation.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
+                    b.Property<bool>("IsCancelled")
+                        .HasColumnType("bit");
+
                     b.Property<int>("NumberOfGuests")
                         .HasColumnType("int");
 
@@ -135,16 +138,11 @@ namespace HotelReservation.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("UserId1")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("BookingId");
 
                     b.HasIndex("RoomId");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("Bookings");
                 });
@@ -339,13 +337,10 @@ namespace HotelReservation.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HotelReservation.Models.ApplicationUser", null)
-                        .WithMany("Bookings")
-                        .HasForeignKey("UserId");
-
                     b.HasOne("HotelReservation.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId1");
+                        .WithMany("Bookings")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Room");
 

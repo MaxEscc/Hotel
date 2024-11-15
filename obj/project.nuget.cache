@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LfkFcW/rBCA=",
+  "dgSpecHash": "u0AANAYCIE8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj",
   "expectedPackageFiles": [
@@ -148,11 +148,7 @@
     "C:\\Users\\Max_j\\.nuget\\packages\\nuget.projectmodel\\6.11.0\\nuget.projectmodel.6.11.0.nupkg.sha512",
     "C:\\Users\\Max_j\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\Max_j\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
-    "C:\\Users\\Max_j\\.nuget\\packages\\openssl.privatekeydecoder\\1.2.0\\openssl.privatekeydecoder.1.2.0.nupkg.sha512",
-    "C:\\Users\\Max_j\\.nuget\\packages\\openssl.x509certificate2.provider\\1.2.0\\openssl.x509certificate2.provider.1.2.0.nupkg.sha512",
-    "C:\\Users\\Max_j\\.nuget\\packages\\paypal.api\\1.0.6\\paypal.api.1.0.6.nupkg.sha512",
-    "C:\\Users\\Max_j\\.nuget\\packages\\paypalcheckoutsdk\\1.0.4\\paypalcheckoutsdk.1.0.4.nupkg.sha512",
-    "C:\\Users\\Max_j\\.nuget\\packages\\paypalhttp\\1.0.1\\paypalhttp.1.0.1.nupkg.sha512",
+    "C:\\Users\\Max_j\\.nuget\\packages\\paypalcheckoutsdk\\1.0.3\\paypalcheckoutsdk.1.0.3.nupkg.sha512",
     "C:\\Users\\Max_j\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Max_j\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\Max_j\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
@@ -195,16 +191,5 @@
     "C:\\Users\\Max_j\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Max_j\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'PayPal.Api 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "PayPal.Api",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

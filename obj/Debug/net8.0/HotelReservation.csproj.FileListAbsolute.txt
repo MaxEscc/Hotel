@@ -336,6 +336,7 @@ C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\NuGet.Pack
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\PayPalCheckoutSdk.dll
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -509,6 +510,7 @@ C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\HotelReser
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\HotelReservation.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\HotelReservation.RazorAssemblyInfo.cache
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\HotelReservation.RazorAssemblyInfo.cs
+C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\HotelReservation.sourcelink.json
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\staticwebassets\msbuild.HotelReservation.Microsoft.AspNetCore.StaticWebAssets.props
@@ -525,9 +527,3 @@ C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\refint\Hot
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\HotelReservation.pdb
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\HotelReservation.genruntimeconfig.cache
 C:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\ref\HotelReservation.dll
-c:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\OpenSSL.PrivateKeyDecoder.dll
-c:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\OpenSSL.X509Certificate2.Provider.dll
-c:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\CloudrailSI.dll
-c:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\PayPalCheckoutSdk.dll
-c:\Users\Max_j\Desktop\Hotel-master\HotelReservation\bin\Debug\net8.0\PayPalHttp-Dotnet.dll
-c:\Users\Max_j\Desktop\Hotel-master\HotelReservation\obj\Debug\net8.0\HotelReservation.sourcelink.json

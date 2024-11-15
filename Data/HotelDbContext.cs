@@ -10,8 +10,8 @@ namespace HotelReservation.Data
         {
         }
 
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<Booking> Bookings { get; set; }
+                    public DbSet<Room> Rooms { get; set; } = null!;
+            public DbSet<Booking> Bookings { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,9 +22,10 @@ namespace HotelReservation.Data
 
             // Configurar la relación entre Booking y ApplicationUser
             modelBuilder.Entity<Booking>()
-                .HasOne<ApplicationUser>()  // Indica que Booking tiene una relación con ApplicationUser
+                .HasOne(b => b.User)  // Indica que Booking tiene una relación con ApplicationUser
                 .WithMany(u => u.Bookings)  // Indica que un ApplicationUser puede tener muchas reservas
-                .HasForeignKey(b => b.UserId);  // Establece la clave foránea
+                .HasForeignKey(b => b.UserId)
+                .OnDelete(DeleteBehavior.Restrict);  // Establece la clave foránea
 
             base.OnModelCreating(modelBuilder);
         }

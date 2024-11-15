@@ -65,13 +65,9 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "PayPal.Api": {
-              "target": "Package",
-              "version": "[1.0.6, )"
-            },
             "PayPalCheckoutSdk": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[1.0.3, )"
             }
           },
           "imports": [

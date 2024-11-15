@@ -2453,67 +2453,13 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
         }
       },
-      "OpenSSL.PrivateKeyDecoder/1.2.0": {
+      "PayPalCheckoutSdk/1.0.3": {
         "type": "package",
-        "compile": {
-          "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "OpenSSL.X509Certificate2.Provider/1.2.0": {
-        "type": "package",
-        "dependencies": {
-          "OpenSSL.PrivateKeyDecoder": "1.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "PayPal.Api/1.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.3",
-          "OpenSSL.X509Certificate2.Provider": "1.2.0"
-        },
-        "compile": {
-          "lib/CloudrailSI.dll": {}
-        },
-        "runtime": {
-          "lib/CloudrailSI.dll": {}
-        }
-      },
-      "PayPalCheckoutSdk/1.0.4": {
-        "type": "package",
-        "dependencies": {
-          "PayPalHttp": "1.0.1"
-        },
         "compile": {
           "lib/netstandard2.0/PayPalCheckoutSdk.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/PayPalCheckoutSdk.dll": {}
-        }
-      },
-      "PayPalHttp/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/PayPalHttp-Dotnet.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/PayPalHttp-Dotnet.dll": {}
         }
       },
       "System.Buffers/4.5.0": {
@@ -7200,82 +7146,16 @@
         "nuget.versioning.nuspec"
       ]
     },
-    "OpenSSL.PrivateKeyDecoder/1.2.0": {
-      "sha512": "2+NGfjqjpIyXEVtsEg5ML7E6bzPGiw6RtH0a7rUhtAEBWWo/d/7uI/TKtHW+/EPO4E/0Gpz4ozG2ETqOAhpmVw==",
+    "PayPalCheckoutSdk/1.0.3": {
+      "sha512": "s6VaUtSbUmFHl10GB79Qw5lQtMoL/oZy46ow5+df4rR2P9D7RtRnr/lFaPDswOnilX2BNd4IsQ4Tt+S9vzklGg==",
       "type": "package",
-      "path": "openssl.privatekeydecoder/1.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net20/OpenSSL.PrivateKeyDecoder.dll",
-        "lib/net20/OpenSSL.PrivateKeyDecoder.xml",
-        "lib/net35/OpenSSL.PrivateKeyDecoder.dll",
-        "lib/net35/OpenSSL.PrivateKeyDecoder.xml",
-        "lib/net45/OpenSSL.PrivateKeyDecoder.dll",
-        "lib/net45/OpenSSL.PrivateKeyDecoder.xml",
-        "lib/netstandard1.3/OpenSSL.PrivateKeyDecoder.dll",
-        "lib/netstandard1.3/OpenSSL.PrivateKeyDecoder.xml",
-        "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.dll",
-        "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.xml",
-        "openssl.privatekeydecoder.1.2.0.nupkg.sha512",
-        "openssl.privatekeydecoder.nuspec"
-      ]
-    },
-    "OpenSSL.X509Certificate2.Provider/1.2.0": {
-      "sha512": "mXoKvCxJHgzIIxvC3VQ1QZC4KeyLUDuxIVD2DAzEJG7aLOC+zvlE0QsNG1tNbp/1eoI0u0RHnM8UL/y88vdiRQ==",
-      "type": "package",
-      "path": "openssl.x509certificate2.provider/1.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net20/OpenSSL.X509Certificate2.Provider.dll",
-        "lib/net20/OpenSSL.X509Certificate2.Provider.xml",
-        "lib/net35/OpenSSL.X509Certificate2.Provider.dll",
-        "lib/net35/OpenSSL.X509Certificate2.Provider.xml",
-        "lib/net45/OpenSSL.X509Certificate2.Provider.dll",
-        "lib/net45/OpenSSL.X509Certificate2.Provider.xml",
-        "lib/netstandard1.3/OpenSSL.X509Certificate2.Provider.dll",
-        "lib/netstandard1.3/OpenSSL.X509Certificate2.Provider.xml",
-        "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.dll",
-        "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.xml",
-        "openssl.x509certificate2.provider.1.2.0.nupkg.sha512",
-        "openssl.x509certificate2.provider.nuspec"
-      ]
-    },
-    "PayPal.Api/1.0.6": {
-      "sha512": "kMR2QUwB7rwAoJ5q5J4V0+2Hli9i0r0X00K+GKV+yCLNd6uQc5WxVv2j2JEMJgOebQI0PMDl2Z8mv/X6c2lJcw==",
-      "type": "package",
-      "path": "paypal.api/1.0.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/CloudrailSI.dll",
-        "paypal.api.1.0.6.nupkg.sha512",
-        "paypal.api.nuspec"
-      ]
-    },
-    "PayPalCheckoutSdk/1.0.4": {
-      "sha512": "4fsOPj6SOJurbVf5ANg7NQ5TNvSYmtngf3dpJN11xEk6BP+5Rn6OcaaTbUx+bVnnYmgaoe5LbRZe52QpAjuwqg==",
-      "type": "package",
-      "path": "paypalcheckoutsdk/1.0.4",
+      "path": "paypalcheckoutsdk/1.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/PayPalCheckoutSdk.dll",
-        "paypalcheckoutsdk.1.0.4.nupkg.sha512",
+        "paypalcheckoutsdk.1.0.3.nupkg.sha512",
         "paypalcheckoutsdk.nuspec"
-      ]
-    },
-    "PayPalHttp/1.0.1": {
-      "sha512": "Jlg8e9Egwxk+sfkIoGIkjQS+uxGNIOnY6NbUkWXKJiEGGqryeV9bIRNtSfjSgs/g02JcIQbKRFQW+8amtSo3ig==",
-      "type": "package",
-      "path": "paypalhttp/1.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/PayPalHttp-Dotnet.dll",
-        "paypalhttp.1.0.1.nupkg.sha512",
-        "paypalhttp.nuspec"
       ]
     },
     "System.Buffers/4.5.0": {
@@ -8718,8 +8598,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.10",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.6",
-      "PayPal.Api >= 1.0.6",
-      "PayPalCheckoutSdk >= 1.0.4"
+      "PayPalCheckoutSdk >= 1.0.3"
     ]
   },
   "packageFolders": {
@@ -8786,13 +8665,9 @@
             "target": "Package",
             "version": "[8.0.6, )"
           },
-          "PayPal.Api": {
-            "target": "Package",
-            "version": "[1.0.6, )"
-          },
           "PayPalCheckoutSdk": {
             "target": "Package",
-            "version": "[1.0.4, )"
+            "version": "[1.0.3, )"
           }
         },
         "imports": [
@@ -8817,17 +8692,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'PayPal.Api 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
-      "libraryId": "PayPal.Api",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

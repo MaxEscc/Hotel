@@ -13,8 +13,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.6",
-          "PayPal.Api": "1.0.6",
-          "PayPalCheckoutSdk": "1.0.4"
+          "PayPalCheckoutSdk": "1.0.3"
         },
         "runtime": {
           "HotelReservation.dll": {}
@@ -1816,53 +1815,11 @@
           }
         }
       },
-      "OpenSSL.PrivateKeyDecoder/1.2.0": {
-        "runtime": {
-          "lib/netstandard2.0/OpenSSL.PrivateKeyDecoder.dll": {
-            "assemblyVersion": "1.2.0.0",
-            "fileVersion": "1.2.0.0"
-          }
-        }
-      },
-      "OpenSSL.X509Certificate2.Provider/1.2.0": {
-        "dependencies": {
-          "OpenSSL.PrivateKeyDecoder": "1.2.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenSSL.X509Certificate2.Provider.dll": {
-            "assemblyVersion": "1.2.0.0",
-            "fileVersion": "1.2.0.0"
-          }
-        }
-      },
-      "PayPal.Api/1.0.6": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.3",
-          "OpenSSL.X509Certificate2.Provider": "1.2.0"
-        },
-        "runtime": {
-          "lib/CloudrailSI.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "PayPalCheckoutSdk/1.0.4": {
-        "dependencies": {
-          "PayPalHttp": "1.0.1"
-        },
+      "PayPalCheckoutSdk/1.0.3": {
         "runtime": {
           "lib/netstandard2.0/PayPalCheckoutSdk.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "PayPalHttp/1.0.1": {
-        "runtime": {
-          "lib/netstandard2.0/PayPalHttp-Dotnet.dll": {
-            "assemblyVersion": "1.0.1.0",
-            "fileVersion": "1.0.1.0"
           }
         }
       },
@@ -3158,40 +3115,12 @@
       "path": "nuget.versioning/6.11.0",
       "hashPath": "nuget.versioning.6.11.0.nupkg.sha512"
     },
-    "OpenSSL.PrivateKeyDecoder/1.2.0": {
+    "PayPalCheckoutSdk/1.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2+NGfjqjpIyXEVtsEg5ML7E6bzPGiw6RtH0a7rUhtAEBWWo/d/7uI/TKtHW+/EPO4E/0Gpz4ozG2ETqOAhpmVw==",
-      "path": "openssl.privatekeydecoder/1.2.0",
-      "hashPath": "openssl.privatekeydecoder.1.2.0.nupkg.sha512"
-    },
-    "OpenSSL.X509Certificate2.Provider/1.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mXoKvCxJHgzIIxvC3VQ1QZC4KeyLUDuxIVD2DAzEJG7aLOC+zvlE0QsNG1tNbp/1eoI0u0RHnM8UL/y88vdiRQ==",
-      "path": "openssl.x509certificate2.provider/1.2.0",
-      "hashPath": "openssl.x509certificate2.provider.1.2.0.nupkg.sha512"
-    },
-    "PayPal.Api/1.0.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-kMR2QUwB7rwAoJ5q5J4V0+2Hli9i0r0X00K+GKV+yCLNd6uQc5WxVv2j2JEMJgOebQI0PMDl2Z8mv/X6c2lJcw==",
-      "path": "paypal.api/1.0.6",
-      "hashPath": "paypal.api.1.0.6.nupkg.sha512"
-    },
-    "PayPalCheckoutSdk/1.0.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4fsOPj6SOJurbVf5ANg7NQ5TNvSYmtngf3dpJN11xEk6BP+5Rn6OcaaTbUx+bVnnYmgaoe5LbRZe52QpAjuwqg==",
-      "path": "paypalcheckoutsdk/1.0.4",
-      "hashPath": "paypalcheckoutsdk.1.0.4.nupkg.sha512"
-    },
-    "PayPalHttp/1.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Jlg8e9Egwxk+sfkIoGIkjQS+uxGNIOnY6NbUkWXKJiEGGqryeV9bIRNtSfjSgs/g02JcIQbKRFQW+8amtSo3ig==",
-      "path": "paypalhttp/1.0.1",
-      "hashPath": "paypalhttp.1.0.1.nupkg.sha512"
+      "sha512": "sha512-s6VaUtSbUmFHl10GB79Qw5lQtMoL/oZy46ow5+df4rR2P9D7RtRnr/lFaPDswOnilX2BNd4IsQ4Tt+S9vzklGg==",
+      "path": "paypalcheckoutsdk/1.0.3",
+      "hashPath": "paypalcheckoutsdk.1.0.3.nupkg.sha512"
     },
     "System.Buffers/4.5.0": {
       "type": "package",

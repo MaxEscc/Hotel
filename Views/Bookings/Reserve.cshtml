@@ -3,65 +3,81 @@
 <h2>Reservar Habitación</h2>
 
 <div class="container mt-4">
+    <!-- Mostrar errores globales -->
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values)
+                {
+                    @foreach (var err in error.Errors)
+                    {
+                        <li>@err.ErrorMessage</li>
+                    }
+                }
+            </ul>
+        </div>
+    }
+
     <form asp-action="Reserve" method="post">
-        
-      <!--  <div class="form-group">
-            <label asp-for="RoomId" class="control-label">ID de Habitación</label>
-            <input asp-for="RoomId" class="form-control" readonly />
-        </div> -->
+        <input asp-for="RoomId" type="hidden" />
 
         <div class="form-group">
             <label asp-for="CustomerName" class="control-label">Nombre del Cliente</label>
-            <input asp-for="CustomerName" class="form-control" />
+            <input asp-for="CustomerName" class="form-control" required />
             <span asp-validation-for="CustomerName" class="text-danger"></span>
         </div>
+
         <div class="form-group">
             <label asp-for="CustomerEmail" class="control-label">Correo Electrónico</label>
-            <input asp-for="CustomerEmail" class="form-control" type="email" />
+            <input asp-for="CustomerEmail" class="form-control" type="email" required />
             <span asp-validation-for="CustomerEmail" class="text-danger"></span>
         </div>
+
         <div class="form-group">
             <label asp-for="CustomerPhone" class="control-label">Número de Teléfono</label>
-            <input asp-for="CustomerPhone" class="form-control" type="tel" />
+            <input asp-for="CustomerPhone" class="form-control" type="tel" required />
             <span asp-validation-for="CustomerPhone" class="text-danger"></span>
         </div>
+
         <div class="form-group">
             <label asp-for="CheckInDate" class="control-label">Fecha de Entrada</label>
-            <input asp-for="CheckInDate" class="form-control" type="date" />
+            <input asp-for="CheckInDate" class="form-control" type="date" required />
             <span asp-validation-for="CheckInDate" class="text-danger"></span>
         </div>
+
         <div class="form-group">
             <label asp-for="CheckOutDate" class="control-label">Fecha de Salida</label>
-            <input asp-for="CheckOutDate" class="form-control" type="date" />
+            <input asp-for="CheckOutDate" class="form-control" type="date" required />
             <span asp-validation-for="CheckOutDate" class="text-danger"></span>
         </div>
+
         <div class="form-group">
             <label asp-for="NumberOfGuests" class="control-label">Número de Huéspedes</label>
-            <input asp-for="NumberOfGuests" class="form-control" type="number" />
+            <input asp-for="NumberOfGuests" class="form-control" type="number" min="1" required />
             <span asp-validation-for="NumberOfGuests" class="text-danger"></span>
         </div>
+
         <div class="form-group">
             <label asp-for="SpecialRequests" class="control-label">Solicitudes Especiales</label>
             <textarea asp-for="SpecialRequests" class="form-control" rows="3"></textarea>
             <span asp-validation-for="SpecialRequests" class="text-danger"></span>
         </div>
 
-                    <h4>Reservas existentes para esta habitación:</h4>
-        @if (ViewBag.ExistingBookings != null && ViewBag.ExistingBookings.Count > 0)
+ }          <h4>Reservas existentes para esta habitación:</h4>
+@if (ViewBag.ExistingBookings != null && ViewBag.ExistingBookings.Count > 0)
+{
+    <ul class="list-group">
+        @foreach (var booking in ViewBag.ExistingBookings)
         {
-            <ul>
-                @foreach (var booking in ViewBag.ExistingBookings)
-                {
-                    <li>
-                        Desde: @booking.CheckInDate.ToShortDateString() hasta: @booking.CheckOutDate.ToShortDateString()
-                    </li>
-                }
-            </ul>
+            <li class="list-group-item">
+                <strong>Desde:</strong> @booking.CheckInDate.ToShortDateString() 
+                <strong>Hasta:</strong> @booking.CheckOutDate.ToShortDateString()
+            </li>
         }
-        else
-        {
-            <p>No hay reservas existentes para esta habitación.</p>
-        }
+    </ul>
+}
+
 
         <div class="form-group mt-3">
             <input type="submit" value="Reservar" class="btn btn-primary" />

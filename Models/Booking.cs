@@ -43,6 +43,9 @@ namespace HotelReservation.Models
         //Campo para cancelar la reserva
         public bool IsCancelled{get; set;}
 
+        //
+        public DateTime? CancellationDate { get; set; }
+
         // Propiedades de navegación
         public virtual Room? Room { get; set; }
         public virtual ApplicationUser? User { get; set; }

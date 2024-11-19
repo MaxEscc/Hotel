@@ -2,42 +2,81 @@
 
 <h2>Mis Reservas</h2>
 
-@if (ViewBag.Message != null)
+@if (TempData["SuccessMessage"] != null)
 {
-    <p>@ViewBag.Message</p>
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
 }
-else
+
+@if (TempData["ErrorMessage"] != null)
 {
-    <table class="table">
-        <thead>
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Habitación</th>
+            <th>Fecha de Check-In</th>
+            <th>Fecha de Check-Out</th>
+            <th>Cliente</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Número de Huéspedes</th>
+            <th>Solicitudes Especiales</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var booking in Model)
+        {
             <tr>
-                <th>Habitación</th>
-                <th>Fecha de Check-In</th>
-                <th>Fecha de Check-Out</th>
-                <th>Cliente</th>
-                <th>Correo</th>
-                <th>Teléfono</th>
-                <th>Número de Huéspedes</th>
-         
+                <td>@(booking.Room?.RoomType ?? "Sin habitación asignada")</td>
+                <td>@booking.CheckInDate.ToShortDateString()</td>
+                <td>@booking.CheckOutDate.ToShortDateString()</td>
+                <td>@booking.CustomerName</td>
+                <td>@booking.CustomerEmail</td>
+                <td>@booking.CustomerPhone</td>
+                <td>@booking.NumberOfGuests</td>
+                <td>@booking.SpecialRequests</td>
+
+                <!-- Mostrar el estado de la cancelación -->
+                <td>
+                    @if (booking.IsCancelled)
+                    {
+                        @if (booking.CancellationDate.HasValue)
+                        {
+                            <span class="text-danger">Cancelada el @booking.CancellationDate.Value.ToString("dd/MM/yyyy")</span>
+                        }
+                        else
+                        {
+                            <span class="text-danger">Cancelada (fecha desconocida)</span>
+                        }
+                    }
+                    else
+                    {
+                        <span class="text-success">Reservada</span>
+                    }
+                </td>
+
+                <!-- Acción para cancelar la reserva (deshabilitada si ya está cancelada) -->
+                <td>
+                    @if (!booking.IsCancelled)
+                    {
+                        <form asp-action="Cancel" asp-controller="Bookings" asp-route-id="@booking.BookingId" method="post" onsubmit="return confirm('¿Estás seguro de que deseas cancelar esta reserva?');">
+                            <button type="submit" class="btn btn-danger">Cancelar</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <button class="btn btn-danger" disabled>Cancelada</button>
+                    }
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var booking in Model)
-            {
-                <tr>
-                    <td>@(booking.Room?.RoomType ?? "Sin habitación asignada")</td>
-                    <td>@booking.CheckInDate.ToShortDateString()</td>
-                    <td>@booking.CheckOutDate.ToShortDateString()</td>
-                    <td>@booking.CustomerName</td>
-                    <td>@booking.CustomerEmail</td>
-                    <td>@booking.CustomerPhone</td>
-                    <td>@booking.NumberOfGuests</td>
-                    <td>@booking.SpecialRequests</td>
-                    <td>
-     
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+        }
+    </tbody>
+</table>

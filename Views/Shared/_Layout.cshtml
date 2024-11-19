@@ -32,9 +32,10 @@
     <li><a asp-area="" asp-controller="Admin" asp-action="Dashboard">Admin Panel</a></li>
 }
 
-                                    
-               <li><a asp-controller="Bookings" asp-action="MyBookings">Mis Reservas</a></li>
-
+                         @if (User.Identity !=null && User.Identity.IsAuthenticated)
+                        {
+                          <li><a asp-controller="Bookings" asp-action="MyBookings">Mis Reservas</a></li>
+                          }          
 
 
                     <div class="d-flex align-items-center">

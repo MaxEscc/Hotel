@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj": {}
+    "c:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj": {
+    "c:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj",
+        "projectUniqueName": "c:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj",
         "projectName": "HotelReservation",
-        "projectPath": "C:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj",
+        "projectPath": "c:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj",
         "packagesPath": "C:\\Users\\Max_j\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\obj\\",
+        "outputPath": "c:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Max_j\\AppData\\Roaming\\NuGet\\NuGet.Config"

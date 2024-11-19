@@ -28,12 +28,13 @@
                 <td>@booking.Room?.RoomType ?? "No asignada"</td>
                 <td>@booking.CheckInDate.ToShortDateString()</td>
                 <td>@booking.CheckOutDate.ToShortDateString()</td>
-                
+
                 <td>
-                    <!-- Botones para editar y eliminar -->
+                    <!-- Botones para editar, eliminar y ver detalles -->
                     <a asp-action="Edit" asp-route-id="@booking.BookingId" class="btn btn-warning">Editar</a>
                     <a asp-action="Delete" asp-route-id="@booking.BookingId" class="btn btn-danger">Eliminar</a>
-                     <a asp-action="Details" asp-route-id="@booking.BookingId" class="btn btn-primary">Detalles</a> 
+                    <a asp-action="Details" asp-route-id="@booking.BookingId" class="btn btn-primary">Detalles</a> 
+                </td>
             </tr>
         }
     </tbody>

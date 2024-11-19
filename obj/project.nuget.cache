@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u0AANAYCIE8=",
+  "dgSpecHash": "mys6dChSkow=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj",
+  "projectFilePath": "c:\\Users\\Max_j\\Desktop\\Hotel-master\\HotelReservation\\HotelReservation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Max_j\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Max_j\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

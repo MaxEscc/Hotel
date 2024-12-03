@@ -1,0 +1,59 @@
+@model HotelReservation.Models.Booking
+
+@{
+    Layout = "_Layout2";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-5 rounded-3">
+        <h1 class="text-center mb-4">Detalles de la Reserva</h1>
+        <p class="text-center text-muted">Información detallada de la reserva seleccionada.</p>
+        <hr class="mb-4" />
+
+        <div class="row">
+            <dl class="row">
+                <!-- Cliente -->
+                <dt class="col-sm-4 text-secondary">Cliente</dt>
+                <dd class="col-sm-8">@Model.CustomerName</dd>
+
+                <!-- Correo -->
+                <dt class="col-sm-4 text-secondary">Correo</dt>
+                <dd class="col-sm-8">@Model.CustomerEmail</dd>
+
+                <!-- Teléfono -->
+                <dt class="col-sm-4 text-secondary">Teléfono</dt>
+                <dd class="col-sm-8">@Model.CustomerPhone</dd>
+
+                <!-- Habitación -->
+                <dt class="col-sm-4 text-secondary">Habitación</dt>
+                <dd class="col-sm-8">@Model.Room?.RoomType</dd>
+
+                <!-- Fecha de Check-in -->
+                <dt class="col-sm-4 text-secondary">Fecha Check-in</dt>
+                <dd class="col-sm-8">@Model.CheckInDate.ToShortDateString()</dd>
+
+                <!-- Fecha de Check-out -->
+                <dt class="col-sm-4 text-secondary">Fecha Check-out</dt>
+                <dd class="col-sm-8">@Model.CheckOutDate.ToShortDateString()</dd>
+
+                <!-- Número de Huéspedes -->
+                <dt class="col-sm-4 text-secondary">Número de Huéspedes</dt>
+                <dd class="col-sm-8">@Model.NumberOfGuests</dd>
+
+                <!-- Solicitudes Especiales -->
+                <dt class="col-sm-4 text-secondary">Solicitudes Especiales</dt>
+                <dd class="col-sm-8">@Model.SpecialRequests</dd>
+
+                <!-- Precio Total -->
+                <dt class="col-sm-4 text-secondary">Precio Total</dt>
+                <dd class="col-sm-8">@Model.TotalCost.ToString("C")</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Botones de acción -->
+    <div class="text-center mt-5">
+        <a asp-action="Edit" asp-route-id="@Model.BookingId" class="btn btn-primary px-4 py-2 me-3">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary px-4 py-2">Volver al listado</a>
+    </div>
+</div>

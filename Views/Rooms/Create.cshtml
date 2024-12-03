@@ -1,0 +1,156 @@
+@model HotelReservation.Models.Room
+
+@{
+    Layout = "_Layout2";
+}
+
+<style>
+    .bg-white {
+        background-color: #fff !important;
+        width: 100%;
+        max-width: 600px; /* Adjust the max-width */
+        margin: 0 auto; /* Center the container */
+        padding: 30px; /* Adjust padding for spacing */
+        border-radius: 10px; /* Round the corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+
+    .form-control-sm {
+        border-radius: 5px; /* Rounded input fields */
+        height: 40px; /* Adjust input height */
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn-sm {
+        border-radius: 5px;
+        padding: 8px 16px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    .text-danger {
+        font-size: 0.875rem;
+    }
+
+    .form-check-input {
+        margin-left: 0.5rem;
+    }
+
+    .form-check-label {
+        font-size: 0.875rem;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-control-sm::placeholder {
+        color: #6c757d; /* Placeholder color */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+
+<div class="container d-flex justify-content-center">
+
+    <div class="bg-white p-4 rounded shadow-sm" style="width: 100%; max-width: 600px;">
+        <h1 class="text-center mb-4">Create Room</h1>
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-4"></div>
+
+            <!-- Room Type -->
+            <div class="form-group">
+                <label asp-for="RoomType" class="control-label">Room Type</label>
+                <input asp-for="RoomType" class="form-control form-control-sm" placeholder="Enter Room Type" />
+                <span asp-validation-for="RoomType" class="text-danger"></span>
+            </div>
+
+            <!-- Price -->
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Price</label>
+                <input asp-for="Price" class="form-control form-control-sm" type="number" step="0.01" placeholder="Enter Price" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Description</label>
+                <textarea asp-for="Description" class="form-control form-control-sm" rows="2" placeholder="Room Description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="form-group">
+                <label class="control-label">Image</label>
+                <input type="file" name="imageFile" class="form-control form-control-sm" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+
+            <!-- Capacity -->
+            <div class="form-group">
+                <label asp-for="Capacity" class="control-label">Capacity</label>
+                <input asp-for="Capacity" class="form-control form-control-sm" type="number" min="1" placeholder="Enter Capacity" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+
+            <!-- Amenities -->
+            <div class="form-group">
+                <label asp-for="Amenities" class="control-label">Amenities</label>
+                <input asp-for="Amenities" class="form-control form-control-sm" placeholder="Enter Amenities" />
+                <span asp-validation-for="Amenities" class="text-danger"></span>
+            </div>
+
+            <!-- Size -->
+            <div class="form-group">
+                <label asp-for="Size" class="control-label">Size (m²)</label>
+                <input asp-for="Size" class="form-control form-control-sm" placeholder="Room Size" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+
+            <!-- Check-in Time -->
+            <div class="form-group">
+                <label asp-for="CheckInTime" class="control-label">Check-in Time</label>
+                <input asp-for="CheckInTime" class="form-control form-control-sm" type="time" />
+                <span asp-validation-for="CheckInTime" class="text-danger"></span>
+            </div>
+
+            <!-- Check-out Time -->
+            <div class="form-group">
+                <label asp-for="CheckOutTime" class="control-label">Check-out Time</label>
+                <input asp-for="CheckOutTime" class="form-control form-control-sm" type="time" />
+                <span asp-validation-for="CheckOutTime" class="text-danger"></span>
+            </div>
+
+            <!-- Available Checkbox -->
+            <div class="form-group form-check">
+                <input class="form-check-input" asp-for="IsAvailable" />
+                <label class="form-check-label" asp-for="IsAvailable">Available</label>
+            </div>
+
+            <!-- Submit and Back Buttons -->
+            <div class="form-group d-flex justify-content-between">
+                <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+                <a asp-action="Index" class="btn btn-secondary btn-sm">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

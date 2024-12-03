@@ -1,0 +1,160 @@
+@{
+    Layout = "_Layout2";
+}
+
+@model IEnumerable<HotelReservation.Models.Room>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitaciones Disponibles</title>
+
+    <!-- Enlaces a las versiones de Bootstrap y FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .offers_area {
+            padding: 50px 0;
+        }
+
+        .single_offers {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .single_offers:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .about_thumb {
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .about_thumb img {
+            width: 100%;
+            height: 200px; /* Ajuste de altura para uniformidad */
+            object-fit: cover;
+        }
+
+        .section_title {
+            margin-bottom: 50px;
+        }
+
+        .section_title h3 {
+            font-size: 2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .section_title span {
+            color: #007bff;
+            font-size: 1.2rem;
+        }
+
+        .book_now {
+            display: inline-block;
+            padding: 5px 15px; /* Botón más pequeño */
+            margin-top: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem; /* Texto reducido */
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .book_now:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            font-size: 0.9rem; /* Tamaño reducido del texto */
+        }
+
+        .price-info p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .col-xl-4,
+        .col-md-4 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .single_offers h3 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="offers_area">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-5">
+                       
+                        <h3>Ongoing Offers</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var room in Model)
+                {
+                    <div class="col-xl-4 col-md-4 mb-4">
+                        <div class="single_offers">
+                            <div class="about_thumb">
+                                <img src="@room.ImageUrl" alt="@room.RoomType" class="img-fluid">
+                            </div>
+                            <h3>@room.RoomType</h3>
+                            <ul>
+                                <li><strong>Descripción:</strong> @room.Description</li>
+                                <li><strong>Capacidad:</strong> @room.Capacity personas</li>
+                                <li><strong>Tamaño:</strong> @room.Size m²</li>
+                                <li><strong>Comodidades:</strong> @room.Amenities</li>
+                            </ul>
+                            <div class="price-info">
+                                <p><strong>Precio por noche:</strong> @room.Price.ToString("C")</p>
+                                <p><strong>Horario de Check-In:</strong> @room.CheckInTime.ToString(@"hh\:mm")</p>
+                                <p><strong>Horario de Check-Out:</strong> @room.CheckOutTime.ToString(@"hh\:mm")</p>
+                            </div>
+                            <a asp-action="Reserve" asp-route-id="@room.RoomId" class="book_now">
+                                <i class="fa fa-calendar-check-o"></i> Reservar
+                            </a>
+                        </div>
+                    </div>
+                }
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

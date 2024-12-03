@@ -1,0 +1,51 @@
+@model HotelReservation.Models.Booking
+
+@{
+    Layout = "_Layout2";
+}
+
+
+
+<div class="container">
+    <div class="card shadow-lg p-4 rounded-3">
+        <h3 class="text-center text-danger">¿Estás seguro que deseas eliminar esta reserva?</h3>
+        <p class="text-center text-muted">Esta acción no se puede deshacer.</p>
+        <hr />
+
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <dl class="row">
+                    <!-- Detalle: Cliente -->
+                    <dt class="col-sm-4 text-secondary">Cliente</dt>
+                    <dd class="col-sm-8">@Model.CustomerName</dd>
+
+                    <!-- Detalle: Correo -->
+                    <dt class="col-sm-4 text-secondary">Correo</dt>
+                    <dd class="col-sm-8">@Model.CustomerEmail</dd>
+
+                    <!-- Detalle: Teléfono -->
+                    <dt class="col-sm-4 text-secondary">Teléfono</dt>
+                    <dd class="col-sm-8">@Model.CustomerPhone</dd>
+
+                    <!-- Detalle: Habitación -->
+                    <dt class="col-sm-4 text-secondary">Habitación</dt>
+                    <dd class="col-sm-8">@Model.Room?.RoomType</dd>
+
+                    <!-- Detalle: Fecha de Check-in -->
+                    <dt class="col-sm-4 text-secondary">Fecha de Check-in</dt>
+                    <dd class="col-sm-8">@Model.CheckInDate.ToShortDateString()</dd>
+
+                    <!-- Detalle: Fecha de Check-out -->
+                    <dt class="col-sm-4 text-secondary">Fecha de Check-out</dt>
+                    <dd class="col-sm-8">@Model.CheckOutDate.ToShortDateString()</dd>
+                </dl>
+            </div>
+        </div>
+
+        <form asp-action="Delete" class="text-center">
+            <input type="hidden" asp-for="BookingId" />
+            <button type="submit" class="btn btn-danger px-4 py-2 me-3">Eliminar</button>
+            <a asp-action="Index" class="btn btn-secondary px-4 py-2">Cancelar</a>
+        </form>
+    </div>
+</div>

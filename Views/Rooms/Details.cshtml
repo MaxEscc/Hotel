@@ -1,0 +1,117 @@
+@model HotelReservation.Models.Room
+
+@{
+    Layout = "_Layout2";
+}
+
+<!-- Estilo personalizado -->
+<style>
+    .room-container {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+    }
+
+    .room-image {
+        width: 100%; 
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .card-title {
+        font-size: 1.8rem;
+        color: #343a40;
+        font-weight: 700;
+    }
+
+    .details-row {
+        margin-top: 10px;
+    }
+
+    .details-row dt {
+        font-weight: bold;
+        color: #495057;
+    }
+
+    .details-row dd {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    .btn-custom {
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .fa {
+        margin-right: 8px; /* Espaciado entre icono y texto */
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: white;
+    }
+</style>
+
+<div class="container room-container">
+    <h1 class="text-center card-title">
+        <i class="fa fa-bed"></i> Detalles de la Habitación
+    </h1>
+    <hr />
+
+    <!-- Detalles de la habitación -->
+    <dl class="row details-row">
+        <!-- Agregar RoomId -->
+        <dt class="col-sm-3"><i class="fa fa-hashtag"></i> ID de Habitación</dt>
+        <dd class="col-sm-9">@Model.RoomId</dd>
+        
+        <dt class="col-sm-3"><i class="fa fa-cogs"></i> Tipo de Habitación</dt>
+        <dd class="col-sm-9">@Model.RoomType</dd>
+
+        <dt class="col-sm-3"><i class="fa fa-dollar"></i> Precio</dt>
+        <dd class="col-sm-9">@Model.Price</dd>
+
+        <dt class="col-sm-3"><i class="fa fa-align-left"></i> Descripción</dt>
+        <dd class="col-sm-9">@Model.Description</dd>
+
+        <dt class="col-sm-3"><i class="fa fa-random"></i> Tamaño (m²)</dt>
+        <dd class="col-sm-9">@Model.Size</dd>
+
+        <dt class="col-sm-3"><i class="fa fa-users"></i> Capacidad</dt>
+        <dd class="col-sm-9">@Model.Capacity</dd>
+
+        <dt class="col-sm-3"><i class="fa fa-concierge-bell"></i> Comodidades</dt>
+        <dd class="col-sm-9">@Model.Amenities</dd>
+
+        <dt class="col-sm-3"><i class="fa fa-check-circle"></i> ¿Disponible?</dt>
+        <dd class="col-sm-9">@Model.IsAvailable</dd>
+
+        <dt class="col-sm-3"><i class="fa fa-image"></i> Imagen</dt>
+        <dd class="col-sm-9">
+            @if (Model.ImageUrl != null)
+            {
+                <img src="@Model.ImageUrl" alt="Imagen de la habitación" class="room-image img-fluid" />
+            }
+            else
+            {
+                <span>No hay imagen disponible</span>
+            }
+        </dd>
+    </dl>
+
+    <!-- Botones de acción -->
+    <div class="mt-3">
+        <a asp-action="Edit" asp-route-id="@Model?.RoomId" class="btn btn-primary btn-custom w-100">
+            <i class="fa fa-edit"></i> Editar
+        </a>
+        <a asp-action="Index" class="btn btn-secondary btn-custom w-100 mt-2">
+            <i class="fa fa-arrow-left"></i> Volver al listado
+        </a>
+    </div>
+</div>
+
+<!-- Añadir FontAwesome 4.7.0 -->
+<script src="https://use.fontawesome.com/releases/v4.7.0/js/all.js"></script>

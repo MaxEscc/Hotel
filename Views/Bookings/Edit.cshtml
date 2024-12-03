@@ -1,0 +1,85 @@
+@model HotelReservation.Models.Booking
+
+@{
+    Layout = "_Layout2";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-5 rounded-3" style="max-width: 600px; margin: auto;">
+        <h1 class="text-center mb-4">Editar Reserva</h1>
+        <p class="text-center text-muted">Actualiza los detalles de la reserva seleccionada.</p>
+        <hr class="mb-4" />
+
+        <form asp-action="Edit" method="post" id="editReservationForm" class="needs-validation" novalidate>
+            <input type="hidden" asp-for="BookingId" />
+
+            <!-- Selección de habitación -->
+            <div class="mb-4">
+                <label asp-for="RoomId" class="form-label fw-bold">Habitación</label>
+                <select asp-for="RoomId" asp-items="ViewBag.Rooms" class="form-select border-secondary" required></select>
+                <span asp-validation-for="RoomId" class="text-danger"></span>
+            </div>
+
+            <!-- Nombre del cliente -->
+            <div class="mb-4">
+                <label asp-for="CustomerName" class="form-label fw-bold">Nombre del Cliente</label>
+                <input asp-for="CustomerName" class="form-control border-secondary" required />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+
+            <!-- Correo electrónico -->
+            <div class="mb-4">
+                <label asp-for="CustomerEmail" class="form-label fw-bold">Correo Electrónico</label>
+                <input asp-for="CustomerEmail" class="form-control border-secondary" type="email" required />
+                <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="mb-4">
+                <label asp-for="CustomerPhone" class="form-label fw-bold">Número de Teléfono</label>
+                <input asp-for="CustomerPhone" class="form-control border-secondary" type="tel" required />
+                <span asp-validation-for="CustomerPhone" class="text-danger"></span>
+            </div>
+
+            <!-- Fecha de entrada -->
+            <div class="mb-4">
+                <label asp-for="CheckInDate" class="form-label fw-bold">Fecha de Entrada</label>
+                <input asp-for="CheckInDate" class="form-control border-secondary" type="date" required />
+                <span asp-validation-for="CheckInDate" class="text-danger"></span>
+            </div>
+
+            <!-- Fecha de salida -->
+            <div class="mb-4">
+                <label asp-for="CheckOutDate" class="form-label fw-bold">Fecha de Salida</label>
+                <input asp-for="CheckOutDate" class="form-control border-secondary" type="date" required />
+                <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+            </div>
+
+            <!-- Número de huéspedes -->
+            <div class="mb-4">
+                <label asp-for="NumberOfGuests" class="form-label fw-bold">Número de Huéspedes</label>
+                <input asp-for="NumberOfGuests" class="form-control border-secondary" type="number" min="1" required />
+                <span asp-validation-for="NumberOfGuests" class="text-danger"></span>
+            </div>
+
+            <!-- Solicitudes especiales -->
+            <div class="mb-4">
+                <label asp-for="SpecialRequests" class="form-label fw-bold">Solicitudes Especiales</label>
+                <textarea asp-for="SpecialRequests" class="form-control border-secondary" rows="3"></textarea>
+                <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+            </div>
+
+            <!-- Botones -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary px-4 py-2 me-2">Guardar</button>
+                <a asp-action="ClientIndex" class="btn btn-secondary px-4 py-2">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Aquí puedes incluir scripts personalizados, si es necesario.
+    </script>
+}

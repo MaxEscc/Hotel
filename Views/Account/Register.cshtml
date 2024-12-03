@@ -1,0 +1,64 @@
+@model HotelReservation.Models.RegisterViewModel
+
+@{
+    Layout = "_Layout2";
+
+    
+}
+
+
+<style>
+
+    .bg-white {
+    background-color: #fff !important;
+    width: 450px; /* Ajusta el ancho del fondo blanco */
+    max-width: 250%; /* Asegura que no exceda el contenedor */
+    margin: 0 auto; /* Centra el fondo blanco en la página */
+    padding: 15px; /* Puedes ajustar el padding según lo necesites */
+}
+
+</style>
+
+
+<!-- Contenedor principal con estilo similar al layout -->
+<div class="container py-5">
+    <div class="container mt-3 p-3 rounded shadow-sm bg-white" style="width: 350px; height: 500px; margin: 0 auto; overflow: auto;">
+        <h2 class="text-center mb-4">Register</h2>
+
+        <form asp-action="Register" method="post">
+            <div class="form-group mb-3">
+                <label asp-for="FirstName" class="form-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="LastName" class="form-label">Last Name</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label">Password</label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="ConfirmPassword" class="form-label">Confirm Password</label>
+                <input asp-for="ConfirmPassword" class="form-control" type="password" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </div>
+        </form>
+    </div>
+</div>

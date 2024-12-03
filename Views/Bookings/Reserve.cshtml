@@ -1,0 +1,138 @@
+@model HotelReservation.Models.Booking
+
+@{
+    Layout = "_Layout2";
+}
+
+<style>
+    .bg-custom {
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+    .form-header {
+        color: #343a40;
+        font-weight: bold;
+    }
+
+    .form-label {
+        color: #495057;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .text-primary {
+        color: #007bff !important;
+    }
+
+    #totalPrice {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .icon {
+        margin-right: 8px;
+    }
+</style>
+
+<div class="container">
+    <div class="bg-custom mx-auto" style="max-width: 600px;">
+        <h2 class="text-center form-header mb-4">
+            <i class="fa fa-bed icon"></i>Reservar Habitación
+        </h2>
+
+        <form asp-action="Reserve" method="post" id="reservationForm" class="needs-validation" novalidate>
+            <input asp-for="RoomId" type="hidden" />
+
+            <!-- Datos del cliente -->
+            <div class="mb-3">
+                <label asp-for="CustomerName" class="form-label">Nombre del Cliente</label>
+                <input asp-for="CustomerName" class="form-control border-secondary" placeholder="Ingrese su nombre" required />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CustomerEmail" class="form-label">Correo Electrónico</label>
+                <input asp-for="CustomerEmail" class="form-control border-secondary" type="email" placeholder="ejemplo@correo.com" required />
+                <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CustomerPhone" class="form-label">Número de Teléfono</label>
+                <input asp-for="CustomerPhone" class="form-control border-secondary" type="tel" placeholder="Ingrese su teléfono" required />
+                <span asp-validation-for="CustomerPhone" class="text-danger"></span>
+            </div>
+
+            <!-- Fechas -->
+            <div class="mb-3">
+                <label asp-for="CheckInDate" class="form-label">Fecha de Entrada</label>
+                <input asp-for="CheckInDate" class="form-control border-secondary" type="date" id="checkInDate" onchange="updatePrice()" required />
+                <span asp-validation-for="CheckInDate" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CheckOutDate" class="form-label">Fecha de Salida</label>
+                <input asp-for="CheckOutDate" class="form-control border-secondary" type="date" id="checkOutDate" onchange="updatePrice()" required />
+                <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+            </div>
+
+            <!-- Precio -->
+            <div class="mb-4">
+                <p class="form-label"><i class="fa fa-usd icon"></i>Precio por noche: 
+                    <span>@Model.PricePerNight.ToString("C")</span>
+                </p>
+                <p class="form-label"><i class="fa fa-calculator icon"></i>Total: 
+                    <span id="totalPrice" class="text-primary">0</span>
+                </p>
+            </div>
+
+            <!-- Número de huéspedes -->
+            <div class="mb-3">
+                <label asp-for="NumberOfGuests" class="form-label">Número de Huéspedes</label>
+                <input asp-for="NumberOfGuests" class="form-control border-secondary" type="number" min="1" placeholder="Ejemplo: 2" required />
+                <span asp-validation-for="NumberOfGuests" class="text-danger"></span>
+            </div>
+
+            <!-- Solicitudes especiales -->
+            <div class="mb-4">
+                <label asp-for="SpecialRequests" class="form-label">Solicitudes Especiales</label>
+                <textarea asp-for="SpecialRequests" class="form-control border-secondary" rows="3" placeholder="Escribe tus solicitudes"></textarea>
+                <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+            </div>
+
+            <!-- Botón de enviar -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary px-4">
+                    <i class="fa fa-check icon"></i>Reservar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function updatePrice() {
+            const checkInDate = new Date(document.getElementById('checkInDate').value);
+            const checkOutDate = new Date(document.getElementById('checkOutDate').value);
+
+            if (checkInDate && checkOutDate && checkOutDate > checkInDate) {
+                const timeDiff = checkOutDate - checkInDate;
+                const daysDiff = timeDiff / (1000 * 3600 * 24);
+                const pricePerNight = @Model.PricePerNight;
+                const totalPrice = daysDiff * pricePerNight;
+                document.getElementById('totalPrice').textContent = totalPrice.toFixed(2);
+            }
+        }
+    </script>
+}

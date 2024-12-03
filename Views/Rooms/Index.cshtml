@@ -1,0 +1,108 @@
+@model IEnumerable<HotelReservation.Models.Room>
+
+@{
+    Layout = "_Layout2";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success animate__animated animate__fadeInDown" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger animate__animated animate__fadeInDown" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="container my-5">
+    <div class="card shadow-lg animate__animated animate__fadeInUp">
+        <div class="card-header bg-dark text-white text-center">
+            <h2 class="mb-0" style="color: #ffffff;">Lista de Habitaciones</h2>
+        </div>
+        <div class="card-body">
+            <p class="text-end">
+                <a asp-action="Create" class="btn btn-success">
+                    <i class="fa fa-plus-circle"></i> Crear Nueva Habitación
+                </a>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Tipo de Habitación</th>
+                            <th>Precio</th>
+                            <th>Descripción</th>
+                            <th>Disponible</th>
+                            <th>Capacidad</th>
+                            <th>Tamaño</th>
+                            <th>Imagen</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.RoomType</td>
+                                <td>@item.Price.ToString("C")</td>
+                                <td>@item.Description</td>
+                                <td>
+                                    @if (item.IsAvailable)
+                                    {
+                                        <span class="badge bg-success">
+                                            <i class="fa fa-check-circle"></i> Disponible
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger">
+                                            <i class="fa fa-times-circle"></i> No Disponible
+                                        </span>
+                                    }
+                                </td>
+                                <td>@item.Capacity</td>
+                                <td>@item.Size</td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@item.RoomId">
+                                        <img src="@item.ImageUrl" alt="Room Image" class="img-thumbnail" style="width:100px;height:auto;" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.RoomId" class="btn btn-warning btn-sm">
+                                            <i class="fa fa-edit"></i> Editar
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.RoomId" class="btn btn-info btn-sm">
+                                            <i class="fa fa-info-circle"></i> Detalles
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.RoomId" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i> Eliminar
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        @if (!Model.Any())
+                        {
+                            <tr>
+                                <td colspan="8" class="text-center text-muted">
+                                    <i class="fa fa-info-circle"></i> No hay habitaciones disponibles
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".table-responsive").addClass("animate__animated animate__fadeIn");
+    });
+</script>

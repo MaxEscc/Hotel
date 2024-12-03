@@ -1,0 +1,117 @@
+@model HotelReservation.Models.Room
+
+@{
+    Layout = "_Layout2";
+}
+
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="bg-white p-4 rounded shadow-sm" style="max-width: 600px; width: 100%; height: auto; overflow-y: auto;">
+        <h1 class="text-center">@ViewData["Title"]</h1>
+        <h1 class="text-center">Editar los detalles de la habitación</h1>
+        <hr />
+
+        <!-- Formulario para editar los detalles de la habitación -->
+        <form asp-action="Edit" enctype="multipart/form-data" class="shadow p-3 rounded bg-light">
+            <!-- Campo para el tipo de habitación -->
+            <input type="hidden" asp-for="RoomId" />
+            <input type="hidden" asp-for="ImageUrl" />
+
+            <div class="form-group mb-3">
+                <label for="RoomType">Tipo de Habitación</label>
+                <input asp-for="RoomType" class="form-control" placeholder="Ej. Habitación Individual" />
+                <span asp-validation-for="RoomType" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para el precio -->
+            <div class="form-group mb-3">
+                <label for="Price">Precio</label>
+                <input asp-for="Price" class="form-control" placeholder="Ej. 100" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para la descripción -->
+            <div class="form-group mb-3">
+                <label for="Description">Descripción</label>
+                <textarea asp-for="Description" class="form-control" placeholder="Descripción de la habitación"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para disponibilidad -->
+            <div class="form-group mb-3">
+                <label for="IsAvailable" class="form-label fs-6 fw-bold">¿Disponible?</label>
+                <div class="form-check">
+                    <input asp-for="IsAvailable" type="checkbox" class="form-check-input" />
+                    <label class="form-check-label" for="IsAvailable">
+                        <span class="badge @((Model.IsAvailable ? "bg-success" : "bg-danger"))">
+                            @((Model.IsAvailable ? "Disponible" : "No Disponible"))
+                        </span>
+                    </label>
+                </div>
+                <span asp-validation-for="IsAvailable" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para la capacidad de personas -->
+            <div class="form-group mb-3">
+                <label for="Capacity">Capacidad</label>
+                <input asp-for="Capacity" class="form-control" placeholder="Número de personas" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para el tamaño de la habitación -->
+            <div class="form-group mb-3">
+                <label for="Size">Tamaño (m²)</label>
+                <input asp-for="Size" class="form-control" placeholder="Ej. 20" />
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para la hora de entrada -->
+            <div class="form-group mb-3">
+                <label for="CheckInTime">Hora de entrada</label>
+                <input asp-for="CheckInTime" type="time" class="form-control" />
+                <span asp-validation-for="CheckInTime" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para la hora de salida -->
+            <div class="form-group mb-3">
+                <label for="CheckOutTime">Hora de salida</label>
+                <input asp-for="CheckOutTime" type="time" class="form-control" />
+                <span asp-validation-for="CheckOutTime" class="text-danger"></span>
+            </div>
+
+            <!-- Campo para las comodidades -->
+            <div class="form-group mb-3">
+                <label for="Amenities">Comodidades</label>
+                <input asp-for="Amenities" class="form-control" placeholder="Ej. WiFi, Aire acondicionado" />
+                <span asp-validation-for="Amenities" class="text-danger"></span>
+            </div>
+
+            <!-- Imagen actual -->
+            <div class="form-group mb-3">
+                <label for="ImageUrl">Imagen actual:</label>
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <div id="currentImageContainer" class="mb-3">
+                        <img id="currentImage" src="@Model.ImageUrl" alt="Imagen actual" width="150" class="img-thumbnail" />
+                    </div>
+                }
+                <label for="imageFile">Seleccionar una nueva imagen (opcional):</label>
+                <input type="file" id="imageFile" name="imageFile" class="form-control" />
+                <div id="previewContainer" class="mt-3">
+                    <!-- Aquí se mostrará la nueva imagen si se selecciona -->
+                    <img id="previewImage" src="" alt="Vista previa de la nueva imagen" style="display: none; width: 150px;" class="img-thumbnail" />
+                </div>
+            </div>
+
+            <!-- Botón para guardar los cambios -->
+            <button type="submit" class="btn btn-primary w-100">Guardar cambios</button>
+        </form>
+
+        <!-- Botón para volver a la lista de habitaciones -->
+        <a asp-action="Index" class="btn btn-secondary mt-3 w-100">Volver a la lista</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/imagePreview.js"></script> <!-- Llamando al archivo JS -->
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

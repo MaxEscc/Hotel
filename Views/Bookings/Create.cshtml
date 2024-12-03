@@ -1,0 +1,105 @@
+@model HotelReservation.Models.Booking
+
+@{
+    Layout = "_Layout2";  
+}
+
+
+
+<div class="container">
+    <div class="card shadow-lg p-4 rounded-3">
+        <h1 class="text-center mb-5">Crear Reserva</h1>
+        <form asp-action="Create" method="post">
+            <div class="row g-4">
+                <!-- Campo: Habitación -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <select asp-for="RoomId" asp-items="ViewBag.Rooms" class="form-select" id="roomSelect">
+                            <option value="">Seleccione una habitación</option>
+                        </select>
+                        <label for="roomSelect">Habitación</label>
+                    </div>
+                    <span asp-validation-for="RoomId" class="text-danger small"></span>
+                </div>
+
+                <!-- Campo: Nombre del Cliente -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input asp-for="CustomerName" class="form-control" id="customerName" placeholder="Nombre del Cliente" />
+                        <label for="customerName">Nombre del Cliente</label>
+                    </div>
+                    <span asp-validation-for="CustomerName" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <!-- Campo: Correo Electrónico -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input asp-for="CustomerEmail" type="email" class="form-control" id="customerEmail" placeholder="Correo Electrónico" />
+                        <label for="customerEmail">Correo Electrónico</label>
+                    </div>
+                    <span asp-validation-for="CustomerEmail" class="text-danger small"></span>
+                </div>
+
+                <!-- Campo: Teléfono -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input asp-for="CustomerPhone" type="tel" class="form-control" id="customerPhone" placeholder="Teléfono" />
+                        <label for="customerPhone">Teléfono</label>
+                    </div>
+                    <span asp-validation-for="CustomerPhone" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <!-- Campo: Fecha de Entrada -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input asp-for="CheckInDate" type="date" class="form-control" id="checkInDate" placeholder="Fecha de Entrada" />
+                        <label for="checkInDate">Fecha de Entrada</label>
+                    </div>
+                    <span asp-validation-for="CheckInDate" class="text-danger small"></span>
+                </div>
+
+                <!-- Campo: Fecha de Salida -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input asp-for="CheckOutDate" type="date" class="form-control" id="checkOutDate" placeholder="Fecha de Salida" />
+                        <label for="checkOutDate">Fecha de Salida</label>
+                    </div>
+                    <span asp-validation-for="CheckOutDate" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-3">
+                <!-- Campo: Número de Huéspedes -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input asp-for="NumberOfGuests" type="number" class="form-control" id="numberOfGuests" placeholder="Número de Huéspedes" />
+                        <label for="numberOfGuests">Número de Huéspedes</label>
+                    </div>
+                    <span asp-validation-for="NumberOfGuests" class="text-danger small"></span>
+                </div>
+
+                <!-- Campo: Solicitudes Especiales -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <textarea asp-for="SpecialRequests" class="form-control" id="specialRequests" placeholder="Solicitudes Especiales"></textarea>
+                        <label for="specialRequests">Solicitudes Especiales</label>
+                    </div>
+                    <span asp-validation-for="SpecialRequests" class="text-danger small"></span>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-primary px-4 py-2">Reservar</button>
+                <a asp-action="Index" class="btn btn-secondary px-4 py-2">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

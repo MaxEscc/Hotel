@@ -1,0 +1,112 @@
+@model IEnumerable<HotelReservation.Models.Booking>
+
+@{
+    Layout = "_Layout2";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success animate__animated animate__fadeInDown" role="alert">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger animate__animated animate__fadeInDown" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="container my-5">
+    <div class="card shadow-lg animate__animated animate__fadeInUp">
+        <div class="card-header bg-dark text-white text-center">
+            <h2 class="mb-0" style="color: #ffffff;">Mis Reservas</h2>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Habitación</th>
+                            <th>Fecha de Check-In</th>
+                            <th>Fecha de Check-Out</th>
+                            <th>Cliente</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Número de Huéspedes</th>
+                            <th>Solicitudes Especiales</th>
+                            <th>Noches</th>
+                            <th>Precio Total</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var booking in Model)
+                        {
+                            <tr>
+                                <td>@(booking.Room?.RoomType ?? "Sin habitación asignada")</td>
+                                <td>@booking.CheckInDate.ToShortDateString()</td>
+                                <td>@booking.CheckOutDate.ToShortDateString()</td>
+                                <td>@booking.CustomerName</td>
+                                <td>@booking.CustomerEmail</td>
+                                <td>@booking.CustomerPhone</td>
+                                <td>@booking.NumberOfGuests</td>
+                                <td>@booking.SpecialRequests</td>
+                                <td>@booking.TotalNights</td>
+                                <td>@booking.TotalCost.ToString("C")</td>
+                                <td>
+                                    @if (booking.IsCancelled)
+                                    {
+                                        <span class="label label-danger">
+                                            <i class="fa fa-times-circle"></i> Cancelada
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="label label-success">
+                                            <i class="fa fa-check-circle"></i> Reservada
+                                        </span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (!booking.IsCancelled)
+                                    {
+                                        <form asp-action="Cancel" asp-controller="Bookings" asp-route-id="@booking.BookingId" method="post" onsubmit="return confirm('¿Estás seguro de que deseas cancelar esta reserva?');">
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                <i class="fa fa-ban"></i> Cancelar
+                                            </button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <button class="btn btn-sm btn-secondary" disabled>
+                                            <i class="fa fa-ban"></i> Cancelada
+                                        </button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        @if (!Model.Any())
+                        {
+                            <tr>
+                                <td colspan="12" class="text-center text-muted">
+                                    <i class="fa fa-info-circle"></i> No hay reservas disponibles
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Opcional: Animación en la tabla o interacción dinámica
+    $(document).ready(function () {
+        $(".table-responsive").addClass("animate__animated animate__fadeIn");
+    });
+</script>

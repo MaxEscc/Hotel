@@ -1,0 +1,901 @@
+{
+  "Files": [
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\flaticon.css",
+      "PackagePath": "staticwebassets\\css\\flaticon.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\gijgo.css",
+      "PackagePath": "staticwebassets\\css\\gijgo.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\css\\nice-select.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\slicknav.css",
+      "PackagePath": "staticwebassets\\css\\slicknav.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\style.map",
+      "PackagePath": "staticwebassets\\css\\style.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\style2.css",
+      "PackagePath": "staticwebassets\\css\\style2.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\theme-default.css",
+      "PackagePath": "staticwebassets\\css\\theme-default.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\theme-default.map",
+      "PackagePath": "staticwebassets\\css\\theme-default.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\css\\themify-icons.css",
+      "PackagePath": "staticwebassets\\css\\themify-icons.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.eot"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.svg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.ttf"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.woff"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\Flaticon.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Flaticon.woff2"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\flaticon.css",
+      "PackagePath": "staticwebassets\\fonts\\flaticon.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\gijgo-material.eot",
+      "PackagePath": "staticwebassets\\fonts\\gijgo-material.eot"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\gijgo-material.svg",
+      "PackagePath": "staticwebassets\\fonts\\gijgo-material.svg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\gijgo-material.ttf",
+      "PackagePath": "staticwebassets\\fonts\\gijgo-material.ttf"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\gijgo-material.woff",
+      "PackagePath": "staticwebassets\\fonts\\gijgo-material.woff"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\themify.eot",
+      "PackagePath": "staticwebassets\\fonts\\themify.eot"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\themify.svg",
+      "PackagePath": "staticwebassets\\fonts\\themify.svg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\themify.ttf",
+      "PackagePath": "staticwebassets\\fonts\\themify.ttf"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\fonts\\themify.woff",
+      "PackagePath": "staticwebassets\\fonts\\themify.woff"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\images\\2.png",
+      "PackagePath": "staticwebassets\\images\\2.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\images\\21.png",
+      "PackagePath": "staticwebassets\\images\\21.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\images\\3.png",
+      "PackagePath": "staticwebassets\\images\\3.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\images\\3d40f658-5752-4a60-b3b2-c25f931daf3c.jpg",
+      "PackagePath": "staticwebassets\\images\\3d40f658-5752-4a60-b3b2-c25f931daf3c.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\images\\a0f71073-1fd6-4cac-86a6-cc0af691602f.png",
+      "PackagePath": "staticwebassets\\images\\a0f71073-1fd6-4cac-86a6-cc0af691602f.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\images\\dcd44800-b272-4786-9550-83518a0d628d.png",
+      "PackagePath": "staticwebassets\\images\\dcd44800-b272-4786-9550-83518a0d628d.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\images\\room1.jpg",
+      "PackagePath": "staticwebassets\\images\\room1.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\about\\1.png",
+      "PackagePath": "staticwebassets\\img\\about\\1.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\about\\2.png",
+      "PackagePath": "staticwebassets\\img\\about\\2.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\about\\about_1.png",
+      "PackagePath": "staticwebassets\\img\\about\\about_1.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\about\\about_2.png",
+      "PackagePath": "staticwebassets\\img\\about\\about_2.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\banner\\about_banner.png",
+      "PackagePath": "staticwebassets\\img\\banner\\about_banner.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\banner\\banner.png",
+      "PackagePath": "staticwebassets\\img\\banner\\banner.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\banner\\banner2.png",
+      "PackagePath": "staticwebassets\\img\\banner\\banner2.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\banner\\bradcam.png",
+      "PackagePath": "staticwebassets\\img\\banner\\bradcam.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\banner\\bradcam2.png",
+      "PackagePath": "staticwebassets\\img\\banner\\bradcam2.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\banner\\bradcam3.png",
+      "PackagePath": "staticwebassets\\img\\banner\\bradcam3.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\a.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\a.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\a2.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\a2.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\d.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\d.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\disabled-check.png",
+      "PackagePath": "staticwebassets\\img\\elements\\disabled-check.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\disabled-radio.png",
+      "PackagePath": "staticwebassets\\img\\elements\\disabled-radio.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\f1.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f1.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\f2.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f2.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\f3.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f3.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\f4.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f4.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\f5.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f5.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\f6.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f6.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\f7.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f7.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\f8.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\f8.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\g1.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g1.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\g2.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g2.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\g3.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g3.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\g4.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g4.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\g5.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g5.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\g6.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g6.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\g7.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g7.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\g8.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\g8.jpg"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\primary-check.png",
+      "PackagePath": "staticwebassets\\img\\elements\\primary-check.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\primary-radio.png",
+      "PackagePath": "staticwebassets\\img\\elements\\primary-radio.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\success-check.png",
+      "PackagePath": "staticwebassets\\img\\elements\\success-check.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\elements\\success-radio.png",
+      "PackagePath": "staticwebassets\\img\\elements\\success-radio.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\img\\favicon.ico"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\img\\favicon.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\footer-logo.png",
+      "PackagePath": "staticwebassets\\img\\footer-logo.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\instragram\\1.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\1.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\instragram\\2.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\2.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\instragram\\3.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\3.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\instragram\\4.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\4.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\instragram\\5.png",
+      "PackagePath": "staticwebassets\\img\\instragram\\5.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\next.png",
+      "PackagePath": "staticwebassets\\img\\post\\next.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_1.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_1.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_10.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_10.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_2.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_2.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_3.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_3.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_4.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_4.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_5.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_5.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_6.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_6.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_7.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_7.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_8.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_8.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\post_9.png",
+      "PackagePath": "staticwebassets\\img\\post\\post_9.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\post\\preview.png",
+      "PackagePath": "staticwebassets\\img\\post\\preview.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\rooms\\1.png",
+      "PackagePath": "staticwebassets\\img\\rooms\\1.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\rooms\\2.png",
+      "PackagePath": "staticwebassets\\img\\rooms\\2.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\rooms\\3.png",
+      "PackagePath": "staticwebassets\\img\\rooms\\3.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\img\\rooms\\4.png",
+      "PackagePath": "staticwebassets\\img\\rooms\\4.png"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\ImagePreview.js",
+      "PackagePath": "staticwebassets\\js\\ImagePreview.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\ajax-form.js",
+      "PackagePath": "staticwebassets\\js\\ajax-form.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\contact.js",
+      "PackagePath": "staticwebassets\\js\\contact.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\gijgo.min.js",
+      "PackagePath": "staticwebassets\\js\\gijgo.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\imagesloaded.pkgd.min.js",
+      "PackagePath": "staticwebassets\\js\\imagesloaded.pkgd.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\isotope.pkgd.min.js",
+      "PackagePath": "staticwebassets\\js\\isotope.pkgd.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\jquery.ajaxchimp.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.ajaxchimp.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\jquery.counterup.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.counterup.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\jquery.form.js",
+      "PackagePath": "staticwebassets\\js\\jquery.form.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\jquery.scrollUp.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.scrollUp.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\jquery.slicknav.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.slicknav.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\mail-script.js",
+      "PackagePath": "staticwebassets\\js\\mail-script.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\nice-select.min.js",
+      "PackagePath": "staticwebassets\\js\\nice-select.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\js\\plugins.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\popper.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\scrollIt.js",
+      "PackagePath": "staticwebassets\\js\\scrollIt.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\vendor\\jquery-1.12.4.min.js",
+      "PackagePath": "staticwebassets\\js\\vendor\\jquery-1.12.4.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\vendor\\modernizr-3.5.0.min.js",
+      "PackagePath": "staticwebassets\\js\\vendor\\modernizr-3.5.0.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\waypoints.min.js",
+      "PackagePath": "staticwebassets\\js\\waypoints.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\js\\wow.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_about.scss",
+      "PackagePath": "staticwebassets\\scss\\_about.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_blog.scss",
+      "PackagePath": "staticwebassets\\scss\\_blog.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_blog_part.scss",
+      "PackagePath": "staticwebassets\\scss\\_blog_part.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_bradcam.scss",
+      "PackagePath": "staticwebassets\\scss\\_bradcam.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_btn.scss",
+      "PackagePath": "staticwebassets\\scss\\_btn.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_contact.scss",
+      "PackagePath": "staticwebassets\\scss\\_contact.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_elements.scss",
+      "PackagePath": "staticwebassets\\scss\\_elements.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_extend.scss",
+      "PackagePath": "staticwebassets\\scss\\_extend.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_footer.scss",
+      "PackagePath": "staticwebassets\\scss\\_footer.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_header.scss",
+      "PackagePath": "staticwebassets\\scss\\_header.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_offers.scss",
+      "PackagePath": "staticwebassets\\scss\\_offers.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_responsive.scss",
+      "PackagePath": "staticwebassets\\scss\\_responsive.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_section_title.scss",
+      "PackagePath": "staticwebassets\\scss\\_section_title.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_slick-nav.scss",
+      "PackagePath": "staticwebassets\\scss\\_slick-nav.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_slider.scss",
+      "PackagePath": "staticwebassets\\scss\\_slider.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\_varriable.scss",
+      "PackagePath": "staticwebassets\\scss\\_varriable.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\scss\\style.scss"
+    },
+    {
+      "Id": "c:\\Users\\Max_j\\Desktop\\Hotel\\wwwroot\\scss\\theme-default.scss",
+      "PackagePath": "staticwebassets\\scss\\theme-default.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HotelReservation.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.HotelReservation.props",
+      "PackagePath": "build\\HotelReservation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.HotelReservation.props",
+      "PackagePath": "buildMultiTargeting\\HotelReservation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.HotelReservation.props",
+      "PackagePath": "buildTransitive\\HotelReservation.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,112 @@
+@model HotelReservation.Models.LoginViewModel
+
+@{
+    Layout = "_Layout2";
+}
+
+<style>
+    .login-container {
+        max-width: 400px;
+        width: 100%;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 8px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 8px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .login-header {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #343a40;
+    }
+
+    .login-header h2 {
+        font-size: 2rem;
+    }
+
+    .login-header .fa {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .login-footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .login-footer a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .login-footer a:hover {
+        text-decoration: underline;
+    }
+
+    .text-danger {
+        font-size: 0.875rem;
+    }
+</style>
+
+<div class="container py-5">
+    <div class="login-container">
+        <div class="login-header">
+            <i class="fa fa-sign-in"></i>
+            <h2>Iniciar Sesión</h2>
+        </div>
+
+        <form asp-action="Login" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label">Correo Electrónico</label>
+                <input asp-for="Email" class="form-control" placeholder="Introduce tu correo electrónico" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label">Contraseña</label>
+                <input asp-for="Password" class="form-control" type="password" placeholder="Introduce tu contraseña" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group form-check mb-3">
+                <input asp-for="RememberMe" class="form-check-input" />
+                <label asp-for="RememberMe" class="form-check-label">Recordarme</label>
+            </div>
+
+            <div class="form-group mb-4">
+                <input type="submit" value="Iniciar Sesión" class="btn btn-primary w-100" />
+            </div>
+        </form>
+
+        <div class="login-footer">
+            <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Puedes agregar un script para realizar alguna validación o funcionalidad adicional aquí
+    </script>
+}

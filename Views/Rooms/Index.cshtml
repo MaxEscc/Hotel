@@ -18,6 +18,15 @@
     </div>
 }
 
+@* 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+} *@
+
 <div class="container my-5">
     <div class="card shadow-lg animate__animated animate__fadeInUp">
         <div class="card-header bg-dark text-white text-center">

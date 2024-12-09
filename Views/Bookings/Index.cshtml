@@ -4,6 +4,16 @@
     Layout = "_Layout2";
 }
 
+
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
 <div class="container mt-5">
     <div class="card shadow-lg p-5 rounded-3">
         <h1 class="text-center mb-4">Reservas</h1>

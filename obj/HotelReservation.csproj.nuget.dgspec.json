@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Max_j\\Desktop\\Hotel\\HotelReservation.csproj": {}
+    "C:\\Users\\Max_j\\Desktop\\Hotel\\HotelReservation.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Max_j\\Desktop\\Hotel\\HotelReservation.csproj": {
+    "C:\\Users\\Max_j\\Desktop\\Hotel\\HotelReservation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Max_j\\Desktop\\Hotel\\HotelReservation.csproj",
+        "projectUniqueName": "C:\\Users\\Max_j\\Desktop\\Hotel\\HotelReservation.csproj",
         "projectName": "HotelReservation",
-        "projectPath": "c:\\Users\\Max_j\\Desktop\\Hotel\\HotelReservation.csproj",
+        "projectPath": "C:\\Users\\Max_j\\Desktop\\Hotel\\HotelReservation.csproj",
         "packagesPath": "C:\\Users\\Max_j\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Max_j\\Desktop\\Hotel\\obj\\",
+        "outputPath": "C:\\Users\\Max_j\\Desktop\\Hotel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Max_j\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BouncyCastle": {
+              "target": "Package",
+              "version": "[1.8.9, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.5.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.Cookies": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -68,6 +76,14 @@
             "PayPalCheckoutSdk": {
               "target": "Package",
               "version": "[1.0.3, )"
+            },
+            "iText7": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "itext7.bouncy-castle-adapter": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [

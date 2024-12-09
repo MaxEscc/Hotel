@@ -5,13 +5,103 @@
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
-    using System.Security.Claims; 
+    using System.Security.Claims;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 
-    namespace HotelReservation.Controllers
+namespace HotelReservation.Controllers
     {
         //[Authorize] // Requiere que el usuario esté autenticado
         public class BookingsController : Controller
         {
+
+
+
+
+[Authorize(Roles = "Admin")] // Only admins can generate reports
+public async Task<IActionResult> GenerateReport()
+{
+    // Get all bookings for the report, including related room and user details
+    var bookings = _context.Bookings.Include(b => b.Room).Include(b => b.User).ToList();
+
+    // Create a PDF file in memory
+    using (var stream = new MemoryStream())
+    {
+        // Create a PdfWriter for the file in memory
+        using (var writer = new PdfWriter(stream))
+        {
+            // Create the PDF document
+            using (var pdf = new PdfDocument(writer))
+            {
+                var document = new Document(pdf);
+
+                // Title of the report
+                document.Add(new Paragraph("Reporte de Reservas")
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .SetFontSize(18));
+
+                // Add a table with the bookings
+                var table = new Table(10, true); // Set the columns to auto-size
+                table.SetWidth(500); // You can adjust the overall width here (in points)
+
+                // Table header
+                table.AddCell("ID Reserva");
+                table.AddCell("Nombre Cliente");
+                table.AddCell("Correo Cliente");
+                table.AddCell("Teléfono Cliente");
+                table.AddCell("Habitación");
+                table.AddCell("Fecha Entrada");
+                table.AddCell("Fecha Salida");
+                table.AddCell("Número de Huéspedes");
+                table.AddCell("Solicitudes Especiales");
+                table.AddCell("Precio Total");
+
+                // Add each booking as a row in the table
+                foreach (var booking in bookings)
+                {
+                    // Calculate TotalNights and TotalCost
+                    booking.TotalNights = (booking.CheckOutDate - booking.CheckInDate).Days;  // Calculate the number of nights
+                    booking.TotalCost = booking.TotalNights * booking.PricePerNight;  // Calculate the total cost
+
+                    table.AddCell(booking.BookingId.ToString());
+                    table.AddCell(booking.CustomerName);
+                    table.AddCell(booking.CustomerEmail);
+                    table.AddCell(booking.CustomerPhone);
+                    table.AddCell(booking.Room?.RoomType ?? "N/A");
+                    table.AddCell(booking.CheckInDate.ToString("dd/MM/yyyy"));
+                    table.AddCell(booking.CheckOutDate.ToString("dd/MM/yyyy"));
+                    table.AddCell(booking.NumberOfGuests.ToString());
+                    table.AddCell(booking.SpecialRequests ?? "N/A");
+                    table.AddCell(booking.TotalCost.ToString("")); // Format as currency
+                }
+
+                // Add the table to the document, it will split automatically across pages if necessary
+                document.Add(table);
+            }
+        }
+
+        // Set content type and PDF file download header
+        Response.ContentType = "application/pdf";
+        Response.Headers.Add("Content-Disposition", "inline; filename=report.pdf");
+
+        // Write the PDF stream to the response asynchronously
+        await Response.Body.WriteAsync(stream.ToArray(), 0, stream.ToArray().Length);
+        return new EmptyResult(); // No view associated with the action
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
             
             private readonly HotelDbContext _context;
@@ -144,8 +234,10 @@ public async Task<IActionResult> Create([Bind("RoomId,CustomerName,CustomerEmail
     // Guardar la reserva
     _context.Add(booking);
     await _context.SaveChangesAsync();
+    // Agregar mensaje de éxito
+                TempData["SuccessMessage"] = "La Modificacón se ha realizado exitosamente.";
 
-    return RedirectToAction("ClientIndex");
+    return RedirectToAction("MyBookings");
 }
 
 
@@ -239,6 +331,10 @@ public async Task<IActionResult> Edit(int id, [Bind("BookingId,RoomId,CustomerNa
 
             _context.Entry(originalBooking).CurrentValues.SetValues(booking); // Actualizar la reserva
             await _context.SaveChangesAsync();
+
+                // Agregar mensaje de éxito
+                TempData["SuccessMessage"] = "La Modificacón se ha realizado exitosamente.";
+
             return RedirectToAction("Index", "Bookings"); // Redirigir al listado de reservas (administrador)
         }
         catch (DbUpdateConcurrencyException)
@@ -290,6 +386,8 @@ public async Task<IActionResult> Edit(int id, [Bind("BookingId,RoomId,CustomerNa
                 {
                     _context.Bookings.Remove(booking);
                     await _context.SaveChangesAsync();
+                    // Agregar mensaje de éxito
+                TempData["SuccessMessage"] = "La Modificacón se ha realizado exitosamente.";
                 }
 
                 return RedirectToAction(nameof(Index));
@@ -426,7 +524,9 @@ public async Task<IActionResult> Reserve([Bind("RoomId,CustomerName,CustomerEmai
 
     _context.Add(booking); // Guardar la reserva
     await _context.SaveChangesAsync();
-    return RedirectToAction("ClientIndex");
+      // Agregar mensaje de éxito
+    TempData["SuccessMessage"] = "La reserva se ha realizado exitosamente.";
+    return RedirectToAction("MyBookings");
 }
 
 
@@ -509,9 +609,9 @@ public async Task<IActionResult> Cancel(int id)
     return RedirectToAction("MyBookings");
 }
 
+}
 
-
-      }
+    
 
         }
          

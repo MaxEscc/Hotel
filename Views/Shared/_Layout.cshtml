@@ -19,16 +19,18 @@
 </head>
 <body>
 
-<header>
-    <div class="header-area">
-        <div id="sticky-header" class="main-header-area">
-            <div class="container-fluid p-0">
-                <div class="row align-items-center no-gutters">
-                    <!-- Menú de navegación -->
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="main-menu d-none d-lg-block">
-                            <nav>
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
                                 <ul id="navigation">
+                                  <a href="@Url.Action("GenerateReport", "Bookings")" class="btn btn-primary">Generar Reporte</a>
+
+
                              <li><a asp-controller="Home" asp-action="" class="active">Home</a></li>
 
 
@@ -68,29 +70,11 @@
 
 
 
-                 <!-- Botones de Login/Logout y Welcome -->
+  <!-- Botones de Login/Logout y Welcome -->
 <div class="col-xl-5 col-lg-4 d-none d-lg-block marin">
     <div class="book_room">
-        <div class="socail_links" style="padding-right: 20px;">
-            <ul>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-facebook-square"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
+        <div class="socail_links" style="padding-right: 20px; ">
+          
         <!-- Botones de Login/Logout y Welcome -->
         <div class="d-flex align-items-center">
             @if (User.Identity != null && User.Identity.IsAuthenticated)
@@ -126,7 +110,6 @@
         </div>
     </div>
 </div>
-
 
 
                     <!-- Menú móvil -->

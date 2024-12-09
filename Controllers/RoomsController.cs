@@ -119,6 +119,8 @@ public async Task<IActionResult> Create([Bind("RoomId,RoomType,Price,Description
         {
             _context.Add(room);
             await _context.SaveChangesAsync();
+                // Agregar mensaje de éxito
+                TempData["SuccessMessage"] = "La Modificacón se ha realizado exitosamente.";
             return RedirectToAction(nameof(Index));
         }
     }
@@ -183,6 +185,8 @@ public async Task<IActionResult> Edit(int id, [Bind("RoomId,RoomType,Price,Descr
 
             _context.Update(existingRoom);
             await _context.SaveChangesAsync();
+                // Agregar mensaje de éxito
+                TempData["SuccessMessage"] = "La Modificacón se ha realizado exitosamente.";
         }
         catch (DbUpdateConcurrencyException)
         {
@@ -231,6 +235,8 @@ public async Task<IActionResult> Delete(int? id)
             {
                 _context.Rooms.Remove(room);
                 await _context.SaveChangesAsync();
+                    // Agregar mensaje de éxito
+                TempData["SuccessMessage"] = "La Modificacón se ha realizado exitosamente.";
             }
 
             return RedirectToAction(nameof(Index));
